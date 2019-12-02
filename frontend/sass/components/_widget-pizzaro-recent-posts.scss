@@ -1,0 +1,66 @@
+.pizzaro_recent_posts_widget{
+	ul {
+		 > li {
+		 	margin-bottom: 3.6em;
+			display: inline-block;
+			width: 100%;
+
+		 	.post-thumbnail {
+				display: block;
+				margin-bottom: 6px;
+
+		 		img {
+		 			width: 100%;
+		 		}
+		 	}
+
+		 	.post-content {
+		 		@include clearfix();
+
+			 	> a{
+			 		color: #2d2b2d;
+			 		display: block;
+					font-size: 1.072em;
+					line-height: 1.6;
+
+			 		&:hover,
+			 		&:focus {
+			 			text-decoration: none;
+			 			color: #000;
+			 		}
+			 	}
+
+				.comments-link a {
+					color: #aeaeae;
+					padding-right: 4px;
+
+					&::before {
+						font-family: $font-pizzaro;
+						content: '\7a';
+						padding-right: 4px;
+						font-size: 0.929em;
+					}
+				}
+
+			 	.post-date {
+			 		color: #aeaeae;
+			 		font-size: 0.858em;
+					font-style: italic;
+			 		line-height: 1.000em;
+			 	}
+			}
+		}
+	}
+
+	.pizzaro-img-placeholder {
+		position: relative;
+
+		.fa {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			@include transform( translate(-50%, -50% ) );
+			color: #fff;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+.product-filters-widgets {
+    float: right;
+
+    .dropdown-toggle {
+        font-size: 0.875em;
+        font-weight: bold;
+        border-radius: 50px;
+        padding: 0.536em 1.778em;
+        display: inline-block;
+        background-color: #f7f7f7;
+
+        i {
+            font-size: 0.8em;
+            padding-left: 10px;
+        }
+    }
+
+    > a:hover,a[aria-expanded="true"] {
+        background-color: #d7d7d7;
+    }
+
+    .collapse,.collapsing {
+        position: absolute;
+        z-index: 3;
+        right: 0;
+        top: 46px;
+        background-color: #f6f6f6;
+        width: 100%;
+        padding: 3em 3em 0 3em;
+    }
+
+    .widget {
+        @include make-column;
+        @include make-xs-column(12);
+        @include make-sm-column(3);
+        @include make-md-column(3);
+    }
+}

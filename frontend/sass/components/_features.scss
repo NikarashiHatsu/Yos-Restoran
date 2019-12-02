@@ -1,0 +1,42 @@
+.features-list {
+    text-align: center;
+    padding: 6.478em 0;
+
+    .feature {
+        font-size: 1.125em;
+        color: #2d2b2d;
+
+        .feature-icon {
+            margin-bottom: 1em;
+        }
+
+        i {
+            color: #bdbdbd;
+            display: table;
+            margin: 0 auto;
+            height: 124px;
+
+            &::before {
+                vertical-align: middle;
+                display: table-cell;
+            }
+        }
+
+        .po-best-quality {font-size: 5.056em;}
+        .po-on-time {font-size: 5.722em;}
+        .po-master-chef {font-size: 4.444em;}
+        .po-ready-delivery {font-size: 6.889em;}
+
+        h4 {
+            font-size: 1em;
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 0.778em;
+            color: #71706c;
+            padding: 0 2.6em;
+            line-height: 1.6;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@l!x0
+Toko      : YOS RESTO                   
+Alamat    : Jalan KH Mustafa No 56 ,Banj
+No. Telp  : (089) 563-582               
+
+No. Order : 6
+Tanggal   : 29-04-2019
+Kasir     : 
+========================================
+Menu                 Harga Qty  Subtotal
+========================================
+PIE COKELAT         10,000   1    10,000
+STRAWBERRY CAKE     30,000   1    30,000
+
+                   Sub Total :    40,000
+                      Diskon :         0
+                       TOTAL :    40,000
+----------------------------------------
+Terima Kasih atas kunjungan Anda
+
+

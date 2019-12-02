@@ -1,0 +1,77 @@
+.section-product-categories {
+    text-align: center;
+    font-family: $secondary-font;
+    margin-bottom: 5.5em;
+
+    .section-title {
+        font-size: 4.063em;
+        font-weight: bold;
+        margin-bottom: 0;
+        border-bottom: none;
+        padding-bottom: .57em;
+        text-transform: uppercase;
+
+        &::after {display: none;}
+    }
+
+    .pre-title {
+        position: relative;
+        z-index: 1;
+        color: #393939;
+        font-size: 1.5em;
+        font-weight: 100;
+        margin-bottom: 0;
+        text-transform: uppercase;
+
+        &:before {
+           border-top: 1px solid #d5d5d5;
+           content:"";
+           margin: 0 auto; /* this centers the line to the full width specified */
+           position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+           top: 50%; left: 0; right: 0; bottom: 0;
+           width: 16%;
+           z-index: -1;
+        }
+
+        span {
+           /* to hide the lines from behind the text, you have to set the background color the same as the container */
+           background: #fff;
+           padding: 0 15px;
+        }
+    }
+
+    .categories {
+        @include make-row;
+
+        .category {
+            @include make-column;
+    		@include make-xs-column(12);
+    		@include make-sm-column(6);
+    		@include make-md-column(6);
+    		@include make-lg-column(6);
+
+            margin-bottom: 1.875em;
+
+            a {
+                display: block;
+                position: relative;
+
+                .caption {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 80%;
+                    transform: translate(-50%, -50%);
+
+                    h4 {
+                        font-size: 7.5em;
+                        margin: 0;
+                        letter-spacing: 3px;
+                        text-transform: uppercase;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

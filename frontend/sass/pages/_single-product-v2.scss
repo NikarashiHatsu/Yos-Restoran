@@ -1,0 +1,265 @@
+/*===================================================================================*/
+/*	SINGLE-PRODUCTS-V2
+/*===================================================================================*/
+.single-product.style-2 {
+    div.product {
+
+        .product-images-wrapper {
+            @include make-xs-column(12);
+            @include make-sm-column(7);
+            @include make-md-column(7);
+        }
+
+        .summary {
+            @include make-xs-column(12);
+            @include make-sm-column(5);
+            @include make-md-column(5);
+
+            .product_title {
+                font-size: 1.625em;
+            }
+
+            div[itemprop="description"] {
+                font-size: 0.938em;
+                line-height: 1.6;
+                margin-bottom: 2.2em;
+            }
+
+            .price {
+                font-size: 1.375em;
+            }
+        }
+
+        .sharedaddy {
+            margin-bottom: 28px;
+        }
+
+        .single-product-wrapper {
+            @include make-column;
+            @include make-xs-column(12);
+            @include make-sm-column(12);
+            @include make-md-column(9);
+        }
+
+        .product-form-wrapper {
+            @include make-column;
+            @include make-xs-column(12);
+            @include make-sm-column(12);
+            @include make-md-column(3);
+            border: 2px solid #e9e9e9;
+            border-radius: 20px;
+            padding: 1.4em 2em 0 2em;
+            //min-height: 410px;
+        }
+
+        .delivery-time {
+            font-size: 0.875em;
+            color: #898885;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e9e9e9;
+            margin-bottom: 2.143em;
+
+            span {
+                font-weight: bold;
+                color: #4aaa19;
+            }
+        }
+
+        form.cart {
+            margin: 0;
+            padding: 0;
+            position: relative;
+
+            .qty-btn>label {
+                padding-bottom: 0.600em;
+                font-size: 0.875em;
+                line-height: 1.4;
+            }
+
+            .yith_wapo_groups_container {
+                float: none;
+                margin: 0;
+            }
+
+            .ywapo_group_container,
+            .ywapo_input_container_radio {
+                width: 100%;
+                padding: 0;
+            }
+
+            .ywapo_input_container_radio .ywapo_label_price {
+                transform: none;
+                top: 4px;
+                right: auto;
+                left: 60px;
+            }
+
+            .yith_wapo_groups_price_container {
+                font-size: 1.4em;
+                color: #2b2929;
+
+                .yith_wapo_group_total {
+                    margin-bottom: 20px;
+                }
+            }
+
+            table.variations {
+				margin-bottom: 0;
+				position: relative;
+
+				tr:last-child {
+					td, th {
+						border: none;
+					}
+
+                    .value {
+                        margin-bottom: 1em;
+                    }
+				}
+
+				td, th {
+					border: none;
+					display: block;
+					padding: 0;
+				}
+
+				td.label {
+					padding-bottom: 0.8em;
+                    text-align: left;
+
+					label {
+                        color: #2b2929;
+                        font-size: 1.167em;
+                        font-weight: bold;
+					}
+				}
+
+				td.value {
+					margin-bottom: 1.6em;
+
+					select, input[type="text"] {
+						width: 100%;
+					}
+				}
+
+				.reset_variations {
+					position: absolute;
+					top: -10px;
+					right: 0;
+					font-size: 80%;
+                    color: $color-body;
+				}
+
+                td.value {
+        			select {
+        				@include c-select();
+        				border-radius: 2em;
+                        padding: 0.286em 1.2em;
+                        border: 2px solid #f9f1db;
+                        height: 42px;
+                        color: #2b2929;
+        			}
+        		}
+			}
+
+            .qty {
+                border: 2px solid #f9f1db;
+                padding: 0.4em 1em;
+                font-size: 0.938em;
+                min-width: 116px;
+            }
+
+            .qty-btn {
+                margin-bottom: 1.625em;
+            }
+
+            .woocommerce-variation-availability {
+                font-size: 0.813em;
+                display: none;
+            }
+
+            .single_variation_wrap {
+                position: relative;
+            }
+
+            .quantity {
+                margin-bottom: 1.875em;
+            }
+
+            .single_variation {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-100%);
+
+                .price {
+                    margin-bottom: 0;
+
+                    .woocommerce-Price-currencySymbol {
+                        font-size: small;
+                        vertical-align: top;
+                        line-height: 1.4;
+                    }
+                }
+
+                .woocommerce-variation-price {
+                    font-size: 1.375em;
+                    color: #2d2b2d;
+                    text-align: right;
+                    max-width: 100px;
+                    line-height: 1;
+                }
+            }
+
+            .variations_button {
+                padding: 0;
+            }
+
+            .button {
+                float: none;
+                padding: 1em 3em;
+                position: absolute;
+                bottom: -24px;
+                left: 0;
+                width: 100%;
+                opacity: 1;
+
+                &::before {
+                    font-family: $font-pizzaro;
+                    content: "\68";
+                }
+            }
+        }
+
+        .thumbnails {
+            a.zoom {
+                @include make-column;
+                @include make-xs-column(4);
+                @include make-sm-column(4);
+                @include make-md-column(4);
+                padding-right: 0;
+            }
+        }
+    }
+
+    .woocommerce-tabs ul.tabs {
+        @extend .container;
+        text-align: left;
+        position: relative;
+        &::before,&::after {
+            width: 2000px;
+            height: 62px;
+            position: absolute;
+            background: #fff;
+        }
+
+        &::before {
+            right: 100%;
+        }
+
+        &::after {
+            left: 100%;
+            top: 0;
+        }
+    }
+}

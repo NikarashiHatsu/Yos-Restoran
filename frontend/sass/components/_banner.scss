@@ -1,0 +1,259 @@
+.banner {
+    text-transform: uppercase;
+    font-family: $secondary-font;
+    margin-bottom: 1.375em;
+
+    .banner-bg {position: relative;}
+
+    &.center {
+        text-align: center;
+
+        .caption {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .title {
+            span {
+                font-weight: 300;
+                color: #fdba3e;
+                font-size: 0.450em;
+                vertical-align: top;
+            }
+        }
+    }
+
+    &.center-right {
+        margin-bottom: 6.4em;
+
+        .caption {
+            font-size: 14em;
+            max-width: 2.455em;
+            top: 50%;
+            left: 5.5em;
+            transform: translate(-50%, -50%);
+
+            .title {
+                font-size: 0.321em;
+                font-weight: 300;
+                letter-spacing: 0.2px;
+                line-height: 0.9;
+            }
+
+            .price {
+                font-size: 1em;
+
+                span {
+                    font-size: 0.5em;
+                    vertical-align: top;
+                }
+            }
+
+            .description {
+                font-size: 1em;
+            }
+
+            .text {
+                font-size: 0.429em;
+                max-width: 4.063em;
+                padding-left: 0.240em;
+            }
+
+            .price,.text {
+                display: inline-block;
+                font-weight: bold;
+                line-height: 0.86;
+            }
+
+            .condition {
+                font-size: 0.080em;
+                padding-top: 1.1em;
+                margin-top: 0.833em;
+                border-top: 1px solid #fff;
+                text-align: center;
+                display: block;
+            }
+        }
+    }
+
+    &.social-block {
+        .caption {
+            font-size: 8.125em;
+
+            .title {
+                font-size: 1em;
+                padding-bottom: 0.2em;
+            }
+
+            .pretitle {
+                font-size: 0.538em;
+                color: #fff;
+                line-height: 0.9;
+                margin-bottom: 0;
+                font-weight: 300;
+            }
+
+            .subtitle {
+                font-size: 0.185em;
+                font-weight: bold;
+                padding-bottom: 0.833em;
+            }
+
+            .button {
+                font-size: 0.115em;
+                font-family: $base-font;
+                padding: 0.962em 3.63em;
+                border-radius: 3.333em;
+                display: inline-block;
+                font-weight: 700;
+                text-transform: uppercase;
+                border: 2px solid;
+                background-color: transparent;
+            }
+        }
+    }
+
+
+
+    .caption {
+        position: absolute;
+        top: 0.575em;
+        left: 0.5em;
+        font-size: 5em;
+        width: 67%;
+
+        .title,.subtitle {
+            margin-bottom: 0;
+            line-height: 1;
+        }
+
+        .description,.condition,.title,.subtitle {
+            color: #fff;
+        }
+
+        .title {
+            font-size: 1em;
+            line-height: 0.8;
+        }
+
+        .subtitle {
+            font-size: 0.563em;
+            font-weight: 200;
+        }
+
+        .description {
+            font-size: 0.200em;
+            line-height: 1;
+        }
+
+        .condition {
+            font-size: 0.175em;
+        }
+
+        .button {
+            font-size: 0.3em;
+            font-weight: 300;
+            padding: 0.396em 1em;
+            border-radius: 10px;
+            line-height: 1;
+        }
+    }
+}
+
+.banners {
+    .banner {
+        .caption {
+            font-size: 4.063em;
+            width: 78%;
+
+            .condition {
+                font-size: .2154em;
+                display: block;
+                padding-top: 2px;
+            }
+
+            .subtitle {
+                font-size: 0.554em;
+                font-weight: 300;
+            }
+
+            .banner-price {
+                position: absolute;
+                top: 210px;
+                font-size: 4.615em;
+                line-height: 1;
+                letter-spacing: -2px;
+                font-weight: bold;
+                padding: 10px 23px 17px;
+                border-radius: 20px;
+
+                .currency,.decimals {
+                    font-size: xx-large;
+                    vertical-align: top;
+                }
+
+                .currency {
+                    font-weight: 400;
+                    line-height: 1.6;
+                }
+
+                .decimals {
+                    line-height: 1.2;
+                }
+            }
+        }
+
+        &.top-right {
+            .caption {
+                text-align: center;
+                top: 0.450em;
+                font-size: 3.750em;
+                left: 2em;
+                width: 44%;
+
+                .description,.condition {
+                    font-size: .25em;
+                }
+            }
+        }
+    }
+}
+
+.tiles .banner.top-left .caption .condition {
+    display: block;
+    position: absolute;
+    top: 350px;
+}
+
+.products-card + .banner,
+.products-card + .banners {
+    margin-top: 30px;
+}
+
+.banner {
+    &:hover {
+        .banner-bg {
+            @include animation-name(pulse);
+            @include animation-fill-mode(both);
+            @include animation-duration(1s);
+        }
+    }
+}
+
+.page-template-template-homepage-v7,
+.page-template-template-homepage-v5 {
+    .banner {
+        &:hover {
+            .banner-bg {
+                animation: none;
+            }
+        }
+    }
+}
+
+.page-template-template-homepage-v7 {
+    .banner {
+        margin-bottom: 0;
+    }
+}

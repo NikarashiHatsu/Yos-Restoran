@@ -1,0 +1,68 @@
+#main .widget_template_features {
+    .features {
+        @include make-row;
+
+        &.columns-1 .feature {
+            @include make-column;
+            @include make-xs-column(12);
+            @include make-sm-column(12);
+            @include make-md-column(12);
+            @include make-lg-column(12);
+        }
+
+        &.columns-2 .feature {
+            @include make-column;
+            @include make-xs-column(12);
+            @include make-sm-column(6);
+            @include make-md-column(6);
+            @include make-lg-column(6);
+        }
+
+        &.columns-3 .feature {
+            @include make-column;
+            @include make-xs-column(12);
+            @include make-sm-column(4);
+            @include make-md-column(4);
+            @include make-lg-column(4);
+        }
+
+        &.columns-4 .feature {
+            @include make-column;
+            @include make-xs-column(12);
+            @include make-sm-column(3);
+            @include make-md-column(3);
+            @include make-lg-column(3);
+        }
+
+        &.columns-6 .feature {
+            @include make-column;
+            @include make-xs-column(12);
+            @include make-sm-column(2);
+            @include make-md-column(2);
+            @include make-lg-column(2);
+        }
+    }
+}
+
+#main .widget_template_features {
+    .feature {
+        margin-right:0;
+        text-align: left;
+
+        h3 {
+            font-size: 1em;
+            margin-bottom: 1.5em;
+
+            a {font-weight: bold;}
+        }
+
+        .feature-content {
+            color: #727272;
+            line-height: 1.8;
+        }
+
+        img {
+            margin:0 0 1.82em 0;
+        }
+    }
+}

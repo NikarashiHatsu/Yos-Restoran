@@ -1,0 +1,87 @@
+.site-footer.footer-v4 {
+	background-color: #fff;
+	padding: 10px 0 42px 0;
+
+	.footer-row {
+		@include display(flex);
+		@include align-items(center);
+	}
+
+	.footer-logo, .site-address, .footer-social-icons {
+		@include make-column;
+	}
+
+	.footer-logo {
+		@include make-xs-column(12);
+		@include make-sm-column(12);
+		@include make-md-column(2);
+		@include make-lg-column(2);
+		padding: 0;
+		margin-bottom: 0;
+
+		.pizzaro-logo,a img{width: 154px;}
+
+		.site-title {margin-bottom: 0;}
+	}
+
+	.site-address {
+		@include make-xs-column(12);
+		@include make-sm-column(12);
+		@include make-md-column(8);
+		@include make-lg-column(8);
+		text-align: center;
+	}
+
+	.footer-social-icons {
+		@include make-xs-column(12);
+		@include make-sm-column(12);
+		@include make-md-column(2);
+		@include make-lg-column(2);
+		padding: 0;
+	}
+
+	.col-full {
+		width: 100%;
+		padding-left: 70px;
+		padding-right: 70px;
+	}
+
+	.address {
+		margin: 0;
+		list-style: none;
+		font-size: 0.938em;
+
+		li {
+			display: inline-block;
+			color: #191919;
+
+			& + li {
+
+				&::before {
+					content: "|";
+					display: inline-block;
+					margin: 0 1.467em;
+				}
+			}
+		}
+	}
+
+	.social-icons {
+		margin: 0;
+		padding-left: 20px;
+
+		li + li {
+			padding-left: 30px;
+		}
+	}
+
+	.social-icons,.social-icons li,.social-icon-text {
+		display: inline-block;
+	}
+
+	.footer-social-icons {
+		text-align: right;
+
+		.social-icon-text {font-size: 0.938em;color: #919191;}
+	}
+}

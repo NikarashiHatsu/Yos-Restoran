@@ -1,0 +1,148 @@
+/*!
+Template Name:      Pizzaro
+Template URI:       https://transvelo.github.io/pizzaro-html/
+Author:             CheThemes
+Author URI:         https://chethemes.com
+Description:        Pizzaro is the perfect HTML Template for your eCommerce project. Designed and developed by CheThemes, it features several layout & color options to personalise your shop, a responsive design and much more. Developers will love it's lean and extensible codebase making it a joy to customise and extend. Looking for a eCommerce Template? Look no further!
+Version:            1.0.1
+GitHub URI:         https://github.com/Transvelo/pizzaro-html
+GitHub Branch:      Template
+License:            GNU General Public License v2 or later
+License URI:        http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:        pizzaro
+Tags:               two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready, rtl-language-support
+
+This Template, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Pizzaro is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+
+All sizing (typography, layout, padding/margins etc) are inspired by a modular scale that uses 14px/16px as base sizes with a 1.618 ratio.
+We use the excellent modular scale tool built by Tim Brown to calculate this. http://modularscale.com/scale/?px1=14&px2=12&ra1=1.618&ra2=0
+
+FontAwesome License: SIL Open Font License - http://scripts.sil.org/OFL
+Images License: GNU General Public License v2 or later
+*/
+
+// Bourbon
+// See: http://bourbon.io/docs/
+@import 'bourbon';
+
+// Susy
+// Susy grid system. See: http://susydocs.oddbird.net/en/latest/
+@import 'node_modules/susy/sass/susy';
+
+// Utilities
+// Sass tools and helpers used across the project.
+@import 'utils/variables';
+@import 'utils/bs-variables';
+@import 'utils/mixins';
+
+// Vendors
+// External libraries and frameworks.
+@import 'vendors/normalize';
+@import 'vendors/font-awesome/font-awesome';
+@import 'vendors/modular-scale';
+
+// Base
+// Includes all the main Pizzaro css.
+@import 'base/base';
+@import 'base/layout';
+
+// Blocks
+@import 'blocks/footer';
+@import 'blocks/header';
+@import "blocks/post.scss";
+@import "blocks/comments.scss";
+// E-commerce Blocks
+@import 'components/ecommerce';
+@import 'blocks/product';
+@import 'blocks/header';
+
+// Components
+@import 'components/menu';
+@import 'components/flex-box';
+@import 'components/owl-carousel';
+@import 'components/jplayer';
+@import 'components/scrollup';
+@import 'components/features';
+@import 'components/menu-card';
+@import 'components/section-tab';
+@import 'components/kc-tab';
+@import 'components/section-recent-post';
+@import 'components/section-recent-posts';
+@import 'components/newsletter-subscription';
+@import 'components/banner';
+@import 'components/post-item';
+@import 'components/owl-carousel';
+@import 'components/pagination';
+@import 'components/rev-slider';
+@import 'components/section-events';
+@import 'components/tiled-gallery';
+@import 'components/blog-menu';
+@import 'components/wc-breadcrumb';
+@import 'components/widget-pizzaro-recent-posts';
+@import 'components/widget-feature';
+@import 'components/mobile-menu';
+@import 'components/megamenu';
+@import 'components/sticky-header';
+@import 'components/terms-conditions';
+@import 'components/html-changes';
+// E-commerce Components
+
+@import 'components/wc-tabs';
+@import 'components/section-product';
+@import 'components/section-products';
+@import 'components/product-item';
+@import 'components/section-products-4-1';
+@import 'components/section-products-with-gallery';
+@import 'components/section-product-categories';
+@import 'components/section-products-sale-event';
+@import 'components/section-products-carousel-with-image';
+@import 'components/product-list-item';
+@import 'components/products-card';
+@import 'components/section-sale-product';
+@import 'components/section-coupon';
+@import 'components/food-type-filter';
+@import 'components/woocommerce-widget';
+@import 'components/pizzaro-sorting';
+@import 'components/shop-archive';
+@import 'components/shop-cat-view';
+@import 'components/yith-radio-button';
+@import 'components/site-header-cart';
+@import 'components/product-filters-widgets';
+@import 'components/product-list-no-image';
+@import 'components/store-locater';
+@import 'components/order-pickup';
+@import 'components/extra-product-options';
+
+// page-links
+@import "pages/blog-grid";
+@import "pages/about-us";
+@import "pages/home";
+@import "pages/contact";
+@import "pages/tribe-events";
+// E-commerce Pages
+@import 'pages/shop';
+@import 'pages/single-product';
+@import 'pages/single-product-v2';
+@import 'pages/single-product-v3';
+@import 'pages/checkout';
+@import 'pages/cart';
+@import 'pages/home';
+@import 'pages/order-completed';
+@import 'pages/my-account';
+@import 'pages/page-track-your-order';
+
+//Responsive
+@import "responsive/screen-md";
+@import "responsive/screen-xs";
+@import "responsive/screen-xs-sm";
+@import "responsive/screen-sm-md";
+@import "responsive/screen-md-lg";
+@import "responsive/screen-lg";
+@import "responsive/screen-down-lg";

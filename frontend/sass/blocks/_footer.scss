@@ -1,0 +1,239 @@
+/**
+ * Footer
+ */
+
+.footer-logo {
+	margin-bottom: 3.75em;
+
+	.custom-logo-link {
+		float: none;
+		display: block;
+		margin-bottom: 0;
+	}
+}
+
+.site-info {
+	margin-bottom: 2.5em;
+
+	.address {
+		list-style: none;
+		margin: 0;
+		margin-bottom: 0.531em;
+
+		li {
+			display: inline-block;
+			color: #ddd;
+			font-size: 0.875em;
+			line-height: 1.5em;
+
+			& + li {
+				&::before {
+					content: '|';
+					display: inline-block;
+					margin: 0 1.563em;
+					color: #c00a27;
+				}
+			}
+		}
+	}
+
+	.copyright {
+		margin: 0;
+		font-size: 0.813em;
+		color: #7f7f7f;
+		line-height: 1.615em;
+	}
+}
+
+/**
+ * Handheld footer bar
+ */
+.pizzaro-handheld-footer-bar {
+	@include clearfix;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-top: 1px solid rgba(#fff,.2);
+	box-shadow: 0 0 6px rgba(#000,.7);
+	z-index: 9999;
+
+	ul {
+		margin: 0;
+
+		li {
+			display: inline-block;
+			float: left;
+			text-align: center;
+
+			&:last-child {
+				> a {
+					border-right: 0;
+				}
+			}
+
+			> a {
+				height: ms(7);
+				display: block;
+				position: relative;
+				text-indent: -9999px;
+				z-index: 999;
+				border-right: 1px solid rgba(#fff,.2);
+
+				&:active,
+				&:focus {
+					outline: none;
+				}
+
+				&:before {
+					@include fa-icon();
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					text-align: center;
+					line-height: 2.618046972; // 4.236/1.618
+					font-weight: 400;
+					font-size: ms(3);
+					text-indent: 0;
+					display: block;
+					cursor: pointer;
+				}
+			}
+
+			&.search {
+				> a:before {
+					content: "\f002";
+				}
+
+				.site-search {
+					position: absolute;
+					bottom: -2em;
+					left: 0;
+					right: 0;
+					@include transition(all,ease,.2s);
+					padding: 1em;
+					visibility: hidden;
+					z-index: 1;
+					display: block;
+				}
+
+				&.active {
+					.site-search {
+						bottom: 100%;
+						visibility: visible;
+					}
+				}
+
+				.site-search,
+				.widget,
+				form {
+					margin-bottom: 0;
+				}
+			}
+
+			&.my-account {
+				> a:before {
+					content: "\f007";
+				}
+			}
+
+			&.cart {
+				> a:before {
+					content: "\f291";
+				}
+
+				.count {
+					text-indent: 0;
+					display: block;
+					width: 2em;
+					height: 2em;
+					line-height: 2;
+					box-sizing: content-box;
+					font-size: .75em;
+					position: absolute;
+					top: ms(-1);
+					left: 50%;
+					border-radius: 100%;
+					border: 1px solid;
+				}
+			}
+		}
+
+		&.columns-1 {
+			li {
+				width: 100%;
+				display: block;
+				float: none;
+			}
+		}
+
+		&.columns-2 {
+			li {
+				width: 50%;
+			}
+		}
+
+		&.columns-3 {
+			li {
+				width: 33.33333%;
+			}
+		}
+
+		&.columns-4 {
+			li {
+				width: 25%;
+			}
+		}
+
+		&.columns-5 {
+			li {
+				width: 20%;
+			}
+		}
+	}
+}
+
+.pizzaro-handheld-footer-bar,
+.pizzaro-handheld-footer-bar ul li > a,
+.pizzaro-handheld-footer-bar ul li.search .site-search {
+	color: #fff;
+}
+
+.pizzaro-handheld-footer-bar {
+	.site-search .widget_product_search form:before {
+		top: 50%;
+		left: auto;
+	}
+
+	.widget_product_search form input[type=submit], .widget_search form input[type=submit] {
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px,1px,1px,1px);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.site-search .widget_product_search input[type=search], .site-search .widget_product_search input[type=text] {
+		padding: 1.41575em 3.706325903em 1.41575em 1.618em;
+    	line-height: 1;
+    	width: 100%;
+    	border-radius: 0;
+    	background-color: #f2f2f2;
+		color: #43454b;
+		outline: 0;
+		border: 0;
+		-webkit-appearance: none;
+		border-radius: 2px;
+		box-sizing: border-box;
+		font-weight: 400;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.125);
+	}
+}
+
+@import 'footer-v1';
+@import 'footer-v2';
+@import 'footer-v3';
+@import 'footer-v4';
+@import 'footer-v5';

@@ -1,0 +1,114 @@
+.page-template-template-aboutpage {
+    #content {
+        margin-top: 0;
+    }
+
+    .section-title,.section-subtitle {
+        text-align: center;
+    }
+
+    .feature-head {
+        text-align: center;
+        margin-bottom: 58px;
+    }
+
+    .site-header {margin-bottom: 0;}
+
+    .section-title {
+        font-size: 2.125em;
+        margin-bottom: 0;
+        border: none;
+        color: #454345;
+        padding-bottom: 6px;
+
+        &::after {display: none;}
+    }
+
+    .section-subtitle {
+        font-size: 0.938em;
+        color: #898989;
+        display: block;
+    }
+
+    img {
+        border-radius: 0;
+    }
+}
+
+.bewear-our-team {
+    padding: 70px 0 40px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5.214em;
+    @include stretch-full-width;
+
+    .section-title {
+        margin-bottom: 1.667em;
+    }
+}
+
+.pizzaro-basics  {
+    @include stretch-full-width;
+    border-bottom: 1px solid #eeeeee;
+
+    .block {
+        h2 {
+            font-size: 1.125em;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+    }
+
+    .blocks {
+        padding: 5.071em 0 4.2em 0;
+        display: inline-block;
+    }
+
+}
+
+.pizzaro-brands {
+    padding: 140px 0;
+
+    .section-title {
+        margin-bottom: 1em;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        text-align: center;
+
+        li + li {
+            border-left: 1px solid #e6e6e6;
+            padding-left: 50px;
+            margin-left: 50px;
+        }
+
+        li {
+            display: inline-block;
+            max-height: 120px;
+        }
+    }
+}
+
+.about-header {
+    @include stretch-full-width;
+    margin-bottom: 116px;
+}
+
+.pizzaro-about-features {
+    margin-bottom: 78px;
+}
+
+.brands-section {
+    margin-bottom: 7.643em;
+
+    .section-title {
+        margin-bottom: 1.861em;
+    }
+}

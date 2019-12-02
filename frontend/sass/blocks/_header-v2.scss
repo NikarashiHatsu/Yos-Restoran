@@ -1,0 +1,78 @@
+.header-v2 {
+    .main-navigation,
+    .site-branding,
+    .header-info-wrapper,
+    .header-nav-links ,
+    .site-header-cart{
+        @include make-column;
+    }
+
+    .main-navigation {
+        @include make-xs-column(12);
+        @include make-sm-column(5);
+        @include make-md-column(5);
+    }
+
+    .site-branding {
+        @include make-xs-column(12);
+        @include make-sm-column(2);
+        @include make-md-column(2);
+        text-align: center;
+        padding: 0;
+
+        a img {
+            width: 180px;
+            margin: 0 auto;
+        }
+    }
+
+    .header-info-wrapper {
+        @include make-xs-column(12);
+        @include make-sm-column(5);
+        @include make-md-column(5);
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+    }
+
+    .header-nav-links {
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(6);
+    }
+
+    .site-header-cart {
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(6);
+        padding: 0;
+    }
+
+    .col-full {
+        display: flex;
+        align-items: center;
+    }
+
+    .primary-navigation {margin-bottom: 0;}
+}
+
+.header-nav-links {
+    font-size: 0.813em;
+    text-align: center;
+
+    ul {
+        margin: 0;
+
+        li {
+            list-style: none;
+            a {color: #fff;}
+        }
+    }
+}
+
+.page-template-template-homepage-v2 .header-v2 {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+}

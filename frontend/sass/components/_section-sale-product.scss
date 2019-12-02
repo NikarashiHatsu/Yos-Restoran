@@ -1,0 +1,75 @@
+.section-sale-product {
+    .product-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-20%, -50%);
+    }
+
+    .price-action,.product-content {
+        @include make-column;
+        @include make-xs-column(12);
+		@include make-sm-column(12);
+		@include make-md-column(12);
+		@include make-lg-column(6);
+    }
+
+    .price-action {
+        text-align: right;
+        padding-right: 4.375em;
+        padding-top: .875em;
+
+        .button {
+            text-transform: uppercase;
+            font-size: 0.938em;
+            padding: 0.6334em 3.81em;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .price {
+            font-size: 5.625em;
+            color: #fdc820;
+            margin-bottom: 0.4em;
+            font-weight: bold;
+            letter-spacing: -4px;
+            line-height: 1;
+
+            .woocommerce-Price-currencySymbol {
+                font-size: 0.567em;
+            }
+
+            > span, del {display: block;}
+
+            del {
+                font-size: 0.467em;
+                color: #ffde74;
+                opacity: 1;
+            }
+        }
+
+    }
+
+    .product-content {
+        h3 {
+            font-size: 12em;
+            font-family: $secondary-font;
+            color: #fff;
+            line-height: 0.58;
+            text-transform: uppercase;
+            margin-bottom: 0.208em;
+
+            span {
+                font-size: 0.729em;
+                line-height: 0.9;
+            }
+        }
+
+        div[itemprop=description] {
+            font-weight: normal;
+            color: #fff;
+            line-height: 1.6;
+        }
+    }
+}

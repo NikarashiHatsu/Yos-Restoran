@@ -1,0 +1,121 @@
+.header-v3 {
+    padding: 6.54px 0;
+
+    .col-full {
+        display: flex;
+        align-items: center;
+        padding-right: 0;
+    }
+
+    .site-branding,
+    .main-navigation,
+    .site-header-cart {
+        @include make-column;
+    }
+
+    .site-branding {
+        @include make-xs-column(12);
+        @include make-sm-column(2);
+        @include make-md-column(2);
+        padding: 0;
+
+        .pizzaro-logo, a img{
+            width: 138px;
+            display: block;
+        }
+    }
+
+    .main-navigation {
+        @include make-xs-column(12);
+        @include make-sm-column(8);
+        @include make-md-column(8);
+        padding-left: 2.875em;
+    }
+
+    .site-header-cart {
+        @include make-xs-column(12);
+        @include make-sm-column(2);
+        @include make-md-column(2);
+        padding-right: 0;
+    }
+
+    .primary-navigation {
+        margin-bottom: 0;
+
+        > .menu {
+
+            > li > a {
+                text-transform: uppercase;
+                font-weight: 800;
+
+                i {
+                    font-size: 0.933em;
+                    margin-right: 8px;
+                }
+            }
+
+            li ,li::before, li a {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+			> li:hover > a {
+				text-decoration: none;
+			}
+
+            > li + li {
+                &::before {
+                    width: 1px;
+                    content: " ";
+                    display: inline-block;
+                    height: 50px;
+                    margin: 0 12px;
+                    background-color: #ef575d;
+                    opacity: .4;
+                }
+            }
+        }
+    }
+}
+
+.lite-bg.header-v3{
+    background-color: #fff;
+    box-shadow: 0 4px 16px rgba(1,1,1,.15);
+
+    .primary-navigation {
+        > .menu {
+            > li {
+                > a {
+                    color: #b3b3b3;
+                }
+
+                &:hover,
+                &.focus {
+                    a {
+                        color: #343433;
+                    }
+                }
+
+                .sub-menu {
+                    li {
+                        &:hover,
+                        &.focus {
+                            > a {
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+
+            > li+li::before {
+                background-color: #e6e6e6;
+                opacity: 1;
+            }
+        }
+    }
+
+    .site-header-cart .cart-contents {
+        &::before,&::after,.amount {color: #343433;}
+    }
+}

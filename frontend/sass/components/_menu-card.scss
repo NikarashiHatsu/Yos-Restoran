@@ -1,0 +1,133 @@
+.menu-card {
+	font-family: $secondary-font;
+	padding-top: 9em;
+
+	.menu-items {
+		@include make-column;
+		@include make-md-column-offset(4);
+	}
+
+	.menus {
+		@include column-count(2);
+		@include column-gap(68px);
+		@include column-rule(1px solid #4c4c4c);
+
+		margin: 0;
+		list-style: none;
+
+		h3 {
+			color: #ffae00;
+			font-size: 2.250em;
+			font-weight: 300;
+			margin-bottom: 12px;
+			text-transform: uppercase;
+
+			.title {
+				max-width: 222px;
+				display: inline-block;
+			}
+
+			.price {
+				float: right;
+			}
+		}
+
+		h3 .price, h4 .price {
+
+			.decimals {
+				font-size: large;
+				vertical-align: top;
+				line-height: 1.5;
+			}
+
+			.currency {display: none;}
+		}
+
+		.menu {
+			margin-bottom: 2.250em;
+		}
+
+		.description {
+			color: #fff;
+			font-style: italic;
+			p {line-height: 1.4;font-family: $base-font;font-size: 14px;}
+
+			ul {
+				margin: 0;
+				list-style: none;
+
+				h4 {
+					font-size: 1.5em;
+					font-weight: 300;
+					color: #fff;
+					text-transform: uppercase;
+					font-style: normal;
+					position: relative;
+
+					.title {
+						max-width: 222px;
+						display: inline-block;
+					}
+
+					.price {
+						position: absolute;
+						font-size: 1.5em;
+						top: -10px;
+						right: 0;
+						color: #ffae00;
+					}
+				}
+			}
+		}
+	}
+
+	.section-title,.pre-title {
+		text-transform: uppercase;
+		color: #fff;
+	}
+
+	.section-title {
+		font-size: 4.500em;
+		font-weight: bold;
+		margin: 0;
+		line-height: 1;
+		padding-bottom: 0.77em;
+		border: none;
+		&::after {display: none;}
+	}
+
+	.pre-title {
+		position: relative;
+    	overflow: hidden;
+		text-align: center;
+		font-weight: 300;
+		font-size: 1.563em;
+		margin-bottom: 0;
+
+
+		span {
+			display: inline-block;
+			vertical-align: baseline;
+			zoom: 1;
+			position: relative;
+			padding: 0 20px;
+
+			&::before,&::after {
+				content: '';
+			    display: block;
+			    width: 53px;
+			    position: absolute;
+			    top: 0.73em;
+			    border-top: 1px solid #d5d5d5;
+			}
+
+			&::before {
+				right: 100%;
+			}
+
+			&::after {
+				left: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,249 @@
+.header-v1 .site-header-cart {
+    .cart-contents {
+        padding: .407em .9em .8em .9em;
+        background-color: #8ca93e;
+        border-radius: 50px;
+        color: #fff;
+        line-height: 1;
+        max-width: 225px;
+        font-size: 1.813em;
+        margin-left: auto;
+
+        &::after {
+            color:white;
+            content: " ";
+            font-size: 18px;
+            align-items:center;
+            padding-bottom: 12px;
+            bottom: -8px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-top:2px solid #226f0b;
+            margin: auto;
+            width:137px;
+            background:
+                linear-gradient(30deg , transparent 40px, white 40px) ,
+                linear-gradient(-45deg , transparent 40px, white 40px) ,
+                linear-gradient(45deg , transparent 34px, white 34px) ,
+                linear-gradient(-45deg , transparent 34px, white 34px);
+            background-size: 7px calc(100% + 30px);
+
+        }
+
+        &::before {
+            font-family: $font-pizzaro;
+            content: "\47";
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        > span {
+            font-size: 0.483em;
+            font-weight: 900;
+            opacity: 1;
+            vertical-align: middle;
+        }
+
+        .count {display: none;}
+
+        .amount {margin-right: 0;}
+
+        .price-label {
+            margin-right: .327em;
+        }
+    }
+}
+
+.header-v1 .site-header-cart-v2 {
+    list-style: none;
+    margin: 0;
+
+    .cart-content {
+        position: relative;
+        margin-left: calc(100% - 225px);
+
+        > a {
+            padding: .66em .9em;
+            background-color: #8ca93e;
+            border-radius: 50px;
+            color: #fff;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            max-width: 225px;
+            font-size: 1.813em;
+            margin-left: auto;
+
+            span {
+                font-size: 0.483em;
+                font-weight: bold;
+                padding-left: 10px;
+            }
+        }
+
+        .sub-menu {
+            border-top:2px solid #226f0b;
+            width:137px;
+            list-style: none;
+            margin: 0 auto;
+            position: absolute;
+            bottom: -63px;
+            overflow: hidden;
+            min-height: 52px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            li {
+                background-color: #fff;
+                height: 45px;
+                width: inherit;
+                transition: transform 0.3s;
+                transform: translate(0px, -44px);
+
+                a {
+                    padding: 6px 10px;
+                    display: block;
+                }
+
+                &::after {
+                    color:white;
+                    content: " ";
+                    font-size: 18px;
+                    align-items:center;
+                    padding-bottom: 12px;
+                    bottom: -4px;
+                    position: relative;
+                    display: block;
+                    margin: auto;
+                    background:
+                        linear-gradient(30deg , transparent 40px, white 40px) ,
+                        linear-gradient(-45deg , transparent 40px, white 40px) ,
+                        linear-gradient(45deg , transparent 34px, white 34px) ,
+                        linear-gradient(-45deg , transparent 34px, white 34px);
+                    background-size: 7px calc(100% + 34px);
+                }
+            }
+        }
+
+        &:hover {
+            .sub-menu li {
+                transform: translate(0px, 0px);
+            }
+        }
+
+        > span {
+            font-size: 0.483em;
+            font-weight: 900;
+            opacity: 1;
+            vertical-align: middle;
+        }
+
+        .count {
+            font-size: 15px;
+        }
+
+        .amount {
+            font-size: 15px;
+            font-weight: bold;
+            float: right;
+        }
+
+        .price-label {
+            margin-right: .327em;
+        }
+    }
+}
+
+.header-v2 .site-header-cart,
+.header-v3 .site-header-cart,
+.header-v4 .site-header-cart {
+    .cart-contents {
+        padding: 0.604em 0;
+        color: #fff;
+        line-height: 1;
+        font-size: 1.188em;
+
+        &::after,
+        &::before {
+            font-family: $font-pizzaro;
+        }
+
+        &::after {
+            color:white;
+            content: "\69";
+            line-height: 1;
+            font-size: 0.5em;
+            float: none;
+            color: #dcdcdc;
+        }
+
+        &::before {
+            content: "\47";
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid #dcdcdc;
+            border-radius: 50px;
+            padding: 0.579em;
+            margin-right: 14px;
+        }
+
+        .amount {
+            font-weight: 900;
+            vertical-align: middle;
+
+            span {
+                font-weight: normal;
+                font-size: 0.929em;
+                padding-right: 6px;
+            }
+        }
+
+        > span {
+            font-size: 0.737em;
+        }
+
+        > span,.count {
+            font-weight: bold;
+            opacity: 1;
+            vertical-align: middle;
+        }
+
+        .count {
+            position: absolute;
+            padding: 0.5em 0;
+            background: #4caf50;
+            font-size: 0.579em;
+            text-align: center;
+            width: 22px;
+            border-radius: 50px;
+            font-weight: 900;
+            left: 0;
+            line-height: 1;
+            top: 2px;
+        }
+    }
+}
+
+.header-v3 .site-header-cart {
+    .cart-contents {
+        float: right;
+
+        &::before {border: none; font-size: 1.158em;margin-right: 0;}
+
+        &::after {
+            color: #fff;
+        }
+
+        .amount span {display: none;}
+
+        >span {
+            font-size: 0.789em;
+        }
+
+        .count {
+            left: 3px;
+            top: 7px;
+        }
+    }
+}

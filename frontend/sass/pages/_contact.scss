@@ -1,0 +1,101 @@
+.page-template-template-contactpage {
+
+    .contact-header {
+        padding-bottom: 22px;
+        text-align: center;
+        margin-bottom: 74px;
+    }
+
+    .site-header {margin-bottom: 0;}
+
+    .entry-title {
+        font-size: 2.125em;
+        font-weight: normal;
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+
+    .contact-form h2 , .store-info h2{
+    	font-size: 1.5em;
+    	color: #333e48;
+    	padding-bottom: 0.600em;
+    	position: relative;
+        font-weight: normal;
+    	margin-bottom: 1.200em;
+
+    	&:after {
+    		content: ' ';
+    		width: 68px;
+    		border-bottom: 2px solid transparent;
+    		display: block;
+    		position: absolute;
+    		bottom: -1px;
+    	}
+    }
+
+    .address-info {
+        ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        ul,p {
+            font-size: 0.875em;
+        }
+    }
+
+    .contact-map {
+        @extend .stretch-full-width;
+
+        margin-bottom: 3.5em;
+
+        iframe {
+            width: 100%;
+            border: none;
+    		@include filter(grayscale(100%));
+
+    		&:hover {
+    			@include filter(grayscale(0%));
+    		}
+    	}
+    }
+
+    .store-info {
+    	h3 {
+    		font-size: 1.000em;
+    		font-weight: 700;
+    		color: #333e48;
+    		padding-top: 2.143em;
+    		padding-bottom: 0.714em;
+    	}
+
+        p{font-size: 0.875em;line-height: 1.6;}
+    }
+
+    .contact-form {
+        > p {
+            padding-bottom: 30px;
+        }
+
+    	.form-group {
+    		margin-bottom: 1.714em;
+
+            input[type=text],
+            .input-text {
+                width: 100%;
+            }
+    	}
+
+        label {
+            font-size: 0.875em;
+            line-height: 1.286em;
+            color: #333e48;
+            font-weight: 700;
+            margin-bottom: .857em;
+        }
+    }
+
+    .wpb_gmaps_widget .wpb_wrapper {
+    	padding: 0;
+    }
+}

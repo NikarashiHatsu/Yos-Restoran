@@ -1,0 +1,12 @@
+.vertical-align {
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+	display: flex;
+	align-items: center;
+}

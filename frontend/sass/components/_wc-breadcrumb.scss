@@ -1,0 +1,34 @@
+.pizzaro-breadcrumb {
+	margin-top: -1.786em;
+	margin-bottom: 3em;
+	border-bottom: 1px solid #e9e9e9;
+	@extend .stretch-full-width;
+}
+
+.woocommerce-breadcrumb {
+	padding-bottom: 2em;
+	@extend .container;
+
+	a {
+		color: $color-body;
+		display: inline-block;
+	}
+
+	span.delimiter {
+		margin: 0 1.04em;
+
+		i {
+			font-size: 10px;
+		}
+
+		& + a {
+			padding: 0.465em 0.929em;
+			background-color: #f5f5f5;
+			border-radius: 0.357em;
+		}
+	}
+}
+
+.home.blog #content, .home.page .entry-header {
+	margin-top: 3.571em;
+}

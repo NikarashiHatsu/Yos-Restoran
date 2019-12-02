@@ -1,0 +1,112 @@
+<div class="h2 text-center">
+    Order Selesai
+</div>
+{resto_order}
+<table border="1" class="table-borderless">
+    <tr>
+        <td width="100px">
+            Tanggal
+        </td>
+        <td>
+            : {order_update}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Waktu
+        </td>
+        <td>
+            : {order_waktu} Menit
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Meja
+        </td>
+        <td>
+            : {meja_id}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Total
+        </td>
+        <td>
+            : Rp.
+            <span data-value="{order_total}" id="order_total">
+                {order_total}
+            </span>
+        </td>
+    </tr>
+</table>
+<table class="table table-sm table-inverse table-hover table-condensed">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Nama
+            </th>
+            <th>
+                Harga
+            </th>
+            <th>
+                Qty
+            </th>
+            <th>
+                Sub Total
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {resto_order_detail}
+        <tr>
+            <td>
+                {menu_kode}
+            </td>
+            <td>
+                {menu_nama}
+            </td>
+            <td>
+                Rp.
+                <span class="order_detail_harga" data-value="{order_detail_harga}">
+                    {order_detail_harga}
+                </span>
+            </td>
+            <td>
+                {order_detail_qty}
+            </td>
+            <td>
+                Rp.
+                <span class="order_detail_subtotal" data-value="{order_detail_subtotal}">
+                    {order_detail_subtotal}
+                </span>
+            </td>
+        </tr>
+        {/resto_order_detail}
+        <tr>
+            <th colspan="10">
+            </th>
+        </tr>
+    </tbody>
+</table>
+{/resto_order}
+<div class="clearfix h2 text-center" style="padding-top: 50px; padding-bottom: 50px;">
+    Terima Kasih
+</div>
+<style type="text/css">
+    .table-borderless th{border:0!important; padding: 4px;vertical-align: middle;}
+    .table-borderless td{border:0!important; padding: 4px;vertical-align: middle;}
+    .table-borderless{
+        background-color: #eee;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function() { 
+        $('#order_total, .order_detail_harga, .order_detail_subtotal').each(function(index, el) {
+            var price = $(this).data('value'); 
+            $(this).html(parseInt(price).toLocaleString('id-ID'));
+        });
+    });
+</script>

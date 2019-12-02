@@ -1,0 +1,90 @@
+.section-recent-posts {
+    @include stretch-full-width;
+    padding: 8.750em 0;
+
+    .section-title,.pre-title {
+        text-transform: uppercase;
+        font-family: $secondary-font;
+    }
+
+    .section-title {
+        font-size: 4.063em;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 0;
+        line-height: 1;
+        padding-bottom: 1.05em;
+        border: none;
+
+        &::after {display: none;}
+    }
+
+    .pre-title {
+        @extend .strike-line-title;
+        text-align: center;
+        font-weight: 300;
+        font-size: 1.5em;
+        color: #393939;
+        margin: 0;
+
+        &::before {
+            width: 14%;
+            border-color: #d5d5d5;
+        }
+    }
+
+    .post-items {
+        margin: 0 auto;
+        padding: 0 12.5em;
+        @include clearfix;
+
+        .post-item {
+            @include make-column;
+    		@include make-xs-column(12);
+    		@include make-sm-column(4);
+    		@include make-md-column(4);
+    		@include make-lg-column(4);
+
+            .post-thumbnail img {
+                margin-bottom: 2.750em;
+            }
+
+            .post-title {
+                color: #2d2b2f;
+                font-size: 1.375em;
+                line-height: 1.4;
+                margin-bottom: 0.955em;
+
+                a {
+                    font-weight: normal;
+                }
+            }
+
+            .post-title + p {
+                color: #666666;
+                min-height: 5.250em;
+            }
+
+            .btn-more,.comments-link a {
+                font-size: 0.875em;
+                font-weight: bold;
+                color: #6d6d6d;
+            }
+
+            .btn-more {
+                &::after {
+                    content: "\6e";
+                    font-family: $font-pizzaro;
+                    vertical-align: middle;
+                    padding-left: 15px;
+                    font-size: 1.286em;
+                }
+            }
+
+            .comments-link {
+                float: right;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

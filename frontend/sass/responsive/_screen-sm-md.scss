@@ -1,0 +1,195 @@
+@include media-breakpoint-up(md) {
+    @include media-breakpoint-down(lg) {/*768-1200*/
+
+        ul.products li.product {
+            &.first {
+                clear: none;
+            }
+
+            &:nth-child(odd) {
+                clear: both;
+            }
+        }
+
+        .woocommerce-tabs .panel .ingredients {
+            .items {
+                .info {
+                    padding-left: 10px;
+                }
+            }
+        }
+
+        .woocommerce-order-received {
+            .woocommerce-thankyou-order-details{
+                li {
+                    padding: 1em 2em;
+                }
+            }
+        }
+
+        form.woocommerce-checkout .col2-set {
+            width: 52%;
+        }
+
+        #order_review, #order_review_heading {
+            width: 44%;
+        }
+
+        .section-products-4-1 .products-4-1 {
+            margin: 0;
+        }
+
+        .section-coupon {
+            .caption {
+                .caption-inner {
+                    left: 50%;
+                }
+            }
+        }
+
+        .list-no-image-cat-view .kc_single_image .scapt {
+            font-size: 6em;
+        }
+
+        .store-locator .store-info .sub-title {
+            font-size: 0.3em;
+        }
+
+        .columns-6 ul.products li.product {
+            &.first {
+                clear: both;
+            }
+
+            &:nth-child(2n+1) {
+                clear: none;
+            }
+        }
+
+        .food-type-filter {
+            .clear-food-type-filter,
+            .widget_layered_nav ul li {
+                margin-bottom: 18px;
+            }
+        }
+
+        #customer_login {
+            padding: 0;
+        }
+
+        .list-view.section-products {
+            .columns-2 ul.products > li {
+                width: 100%;
+
+                .product-inner {
+                    display: -webkit-flex;
+                    display: -moz-flex;
+                    display: -ms-flex;
+                    display: -o-flex;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        .section-products-4-1 {
+            ul.products li.product .yith_wapo_groups_container {
+                display: none;
+            }
+
+            .products-4-1 {
+                .columns-2 {
+                    .button {
+                        overflow: hidden;
+                        height: 20px;
+                        width: 20px;
+                        padding: 1.6em;
+                        text-indent: -9999px;
+
+                        &::before {
+                            float: left;
+                            font-size: 18px;
+                            content: "\68";
+                            line-height: 16px;
+                            margin: 0;
+                            text-indent: 0;
+                            height: 20px;
+                            width: 20px;
+                            font-weight: 100;
+                            top: -9px;
+                            right: 9px;
+                            position: relative;
+                        }
+                    }
+                }
+            }
+        }
+
+        .section-product .product-wrapper .product-inner {
+            padding: 0;
+        }
+
+        .banners .banner.top-right .caption {
+            font-size: 3.2em;
+        }
+
+        .woocommerce-tabs ul.tabs {
+            font-size: 1em;
+        }
+
+        .list-no-image-view ul.products li.product h3,
+        .list-no-image-cat-view ul.products li.product h3{
+            max-width: 44%;
+        }
+
+        .list-no-image-view ul.products li.product .product-content-wrapper .yith_wapo_groups_container,
+        .list-no-image-cat-view ul.products li.product .product-content-wrapper .yith_wapo_groups_container {
+            width: 40%;
+        }
+
+        .section-products {
+            .columns-4 ul.products > li {
+                border: none;
+                margin-bottom: 0;
+
+                &:hover {border: none;}
+
+                div[itemprop="description"] {display: none;}
+            }
+        }
+
+        .single-product.style-1 div.product{
+            form.cart {
+                .button {
+                    float: left;
+                }
+
+                .ywapo_group_container_radio {
+                    padding: 0 15px;
+                    width: 100%;
+                }
+            }
+        }
+
+        .single-product.style-2 div.product {
+            .single-product-wrapper {
+                width: 100%;
+            }
+
+            .product-form-wrapper {
+                clear: both;
+                margin: 0 auto 6em auto;
+                width: 400px;
+                float: none;
+            }
+        }
+
+        .banner.center-right .caption {
+            left: 50%;
+            font-size: 9em;
+            width: 86%;
+
+            .condition {font-size: .1em;}
+        }
+
+    }
+}

@@ -1,0 +1,130 @@
+/* Style Selector */
+#config {
+	background: #fff;
+	width: 193px;
+	position: fixed;
+	right: 0;
+	top: 50px;
+	z-index: 99999;
+}
+
+#config_container {
+	-webkit-box-shadow: 0 2px 9px 2px rgba(0,0,0,0.14);
+	-moz-box-shadow: 0 2px 9px 2px rgba(0,0,0,0.14);
+	box-shadow: 0 2px 9px 2px rgba(0,0,0,0.14);
+	border: 1px solid rgba(23,24,26,0.15);
+	-webkit-border-top-left-radius: 2px;
+	-webkit-border-bottom-left-radius: 2px;
+	-moz-border-radius-topleft: 2px;
+	-moz-border-radius-bottomleft: 2px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+
+.style-main-title {
+	color: #000;
+	font-size: 15px;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	border-bottom: 1px solid rgba(23,24,26,0.15);
+	background: #f0f0f0; );
+}
+
+.input { position:relative; }
+.hidden-message { text-align:left; line-height:1.1; width:126px; margin-top:7px; color:#f70; display:none; }
+
+.box-title {
+	font-size: 12px;
+	height: 21px;
+	line-height: 41px;
+	color: #000;
+	text-align: center;
+}
+
+.box-title-text {
+	font-size: 12px;
+	line-height: 16px;
+	text-align: center;
+	padding:15px;
+}
+
+.input-box {
+	padding: 15px;
+	padding-left: 40px;
+	border-bottom-color: #f4f4f4;
+	border-bottom: 1px solid rgba(23,24,26,0.15);
+}
+
+.input-box select:focus {
+	outline: none;
+}
+
+.input-box-2 {
+	padding: 10px;
+	padding-left: 25px;
+	border-bottom-color: #f4f4f4;
+	border-bottom: 1px solid rgba(23,24,26,0.15);
+}
+
+.input-box input, .input-box p { margin-bottom: 0px; font-size:12px;}
+.input-box input[type=checkbox]{ margin-right: 5px; }
+
+.input-box select {
+	background: #f7f7f7;
+	width: 120px;
+	border: 1px solid rgba(23,24,26,0.15);
+	font-size: 11px;
+	color: #000;
+	height: 20px;
+}
+
+#config .colors {
+	width: 165px;
+	padding-left: 25px;
+	margin-top: 15px;
+	border-bottom: 1px solid rgba(23,24,26,0.15);
+	padding-bottom: 10px;
+	position: relative;
+	z-index: 1000000;
+}
+
+#config .style-toggle {
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color: #FFF;
+	border: 1px solid rgba(23,24,26,0.15);
+	border-right: none;
+	display: block;
+	background-position: top left;
+	position: absolute;
+	top: 45px;
+	left: -34px;
+	opacity: 1;
+}
+
+#config .style-toggle .fa {
+	display: block;
+	padding: 10px;
+}
+
+.config.open #config_container {
+	display: none;
+}
+
+#config.config.open  .style-toggle {
+	left: auto;
+	right: 0;
+}
+
+.changecolor { width:20px; height:20px; display: inline-block; text-indent: -9999px; }
+
+.changecolor.green{ background-color: #75B432; }
+.changecolor.pink{ background-color: #ce1d76; }
+.changecolor.gold{ background-color: #dab26d; }
+.changecolor.blue{ background-color: #0787ea }
+.changecolor.red{ background-color: #2586ff }
+.changecolor.orange{ background-color: #f89a20 }
+.changecolor.flat-blue{ background-color: #00abc5 }
+.changecolor.navy{ background-color: #000080 }

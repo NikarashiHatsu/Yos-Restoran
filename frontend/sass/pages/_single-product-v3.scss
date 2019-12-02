@@ -1,0 +1,171 @@
+/*===================================================================================*/
+/*	SINGLE-PRODUCTS-V3
+/*===================================================================================*/
+.single-product.style-3 {
+    div.product {
+        .product-form-wrapper {
+            @include stretch-full-width;
+            background-color: #f5f5f5;
+            z-index: 1;
+            padding-bottom: 4.188em;
+            margin-bottom: 5.750em;
+        }
+
+        .group-name {
+            font-size: 1.625em;
+            font-weight: normal;
+            color: #484848;
+            margin-bottom: 0.731em;
+            padding-bottom: 0.577em;
+            padding-top: 2.462em;
+            border-bottom: 1px dashed #c7c7c6;
+            margin-left: 0.577em;
+            display: block;
+        }
+
+        .woocommerce-tabs {display: none;}
+
+        .summary {
+            .product_title {
+                display: block;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #e9e9e9;
+                margin-bottom: 30px;
+            }
+
+            .price {display: none;}
+
+            .sharedaddy {
+                margin-bottom: 1.063em;
+            }
+
+            div[itemprop="description"] {
+                font-style: normal;
+            }
+        }
+
+        .product-images-wrapper {
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .images {
+            @include make-row;
+
+            > a.zoom {
+                @include make-column;
+                @include make-xs-column(12);
+                @include make-sm-column(10);
+                @include make-md-column(10);
+            }
+
+            .thumbnails {
+                @include make-column;
+                @include make-xs-column(3);
+                @include make-sm-column(2);
+                @include make-md-column(2);
+
+                a.zoom {
+                    width: 100%;
+                    padding: 0;
+                }
+            }
+        }
+
+        .ywapo_input_container_radio {
+            .ywapo_label_tag_position_after::before {
+                background-color: #fff;
+            }
+
+            &:hover {
+                label::before {
+                    background-color: #ffcd00;
+                }
+            }
+
+            input:checked + label::before {
+                background-color: #ffcd00;
+                border: 2px solid #ffcd00;
+            }
+        }
+
+        form.cart {
+            @extend .container;
+            padding-top: 0;
+            padding-bottom: 0;
+            text-align: right;
+
+            .yith_wapo_groups_container {
+                text-align: left;
+            }
+
+            .qty-btn,
+            .button {
+                display: inline-block;
+                float: none;
+                vertical-align: middle;
+            }
+
+            .qty-btn {
+                text-align: left;
+                padding-right: 50px;
+            }
+
+            .button {
+                margin-top: 34px;
+            }
+
+            .ywapo_group_container_checkbox {
+                @include make-column;
+                @include make-xs-column(12);
+                @include make-sm-column(3);
+                @include make-md-column(3);
+            }
+
+            .ywapo_group_container_radio {
+                @include make-column;
+                @include make-xs-column(12);
+                @include make-sm-column(6);
+                @include make-md-column(6);
+            }
+
+            .ywapo_group_container .ywapo_input_container_checkbox .ywapo_option_label {
+                letter-spacing: -0.4px;
+            }
+
+            .ywapo_group_container_text {
+                label {
+                    font-size: 0.938em;
+                    color: #2b2929;
+                    font-weight: bold;
+                }
+            }
+
+            .yith_wapo_group_total {
+                text-align: right;
+                font-size: 1.4em;
+                color: #2d2b2d;
+                padding: 0;
+                margin-top: 20px;
+                margin-bottom: 0;
+            }
+
+            .quantity {
+                overflow: visible;
+
+                label {
+                    position: absolute;
+                    top: -2.733em;
+                    color: #2b2929;
+                    font-size: .938em;
+                    font-weight: 700;
+                }
+            }
+
+            .yith_wapo_groups_container_wrap {
+                @include clearfix();
+                margin-bottom: 0;
+            }
+        }
+    }
+}

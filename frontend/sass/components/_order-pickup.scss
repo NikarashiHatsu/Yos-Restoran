@@ -1,0 +1,56 @@
+#byconsolewooodt_checkout_field {
+    .byconsolewooodt_delivery_type {
+        display: flex;
+        align-items: center;
+
+        input {margin-top: 0;}
+
+        input,label {
+            margin-left: 10px;
+        }
+
+        #byconsolewooodt_delivery_type_levering {
+            margin-left: 30px;
+        }
+
+        #byconsolewooodt_delivery_type_take_away {
+            margin-left: 0;
+        }
+    }
+
+    .byconsolewooodt_delivery_date,.byconsolewooodt_delivery_time {
+        width: 50%;
+        display: inline-block;
+    }
+
+    .byconsolewooodt_delivery_time {
+        padding-left: 15px;
+    }
+
+    .byconsolewooodt_delivery_date {
+        padding-right: 15px;
+    }
+
+    label[for=take_away] {
+        margin: 0 10px 0 0;
+    }
+
+    h2 {
+        line-height: 1.6em;
+        display: block;
+        position: relative;
+        padding-bottom: .4em;
+        margin-bottom: 1.36em;
+        font-weight: 400;
+        font-size: 1.5em;
+
+        &::after {
+            content: ' ';
+            border-bottom: 2px solid transparent;
+            display: block;
+            width: 114px;
+            position: absolute;
+            bottom: -1px;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+.section-coupon {
+    font-family: $secondary-font;
+
+    .coupon-bg {
+        position: relative;
+    }
+
+    .caption {
+        font-size: 12.5em;
+        height: inherit;
+
+        .caption-inner {
+            text-transform: uppercase;
+            position: relative;
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            max-width: 4em;
+        }
+
+        .coupon-code,.coupon-info {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .coupon-code {
+            font-size: 1em;
+            line-height: 1;
+            font-weight: bold;
+            max-width: 290px;
+            line-height: 0.76;
+        }
+
+        .coupon-info {
+            padding-left: 0.170em;
+
+            .title {
+                font-size: 0.325em;
+                font-weight: bold;
+                color: #282828;
+                max-width: 350px;
+                line-height: 0.9;
+                margin-bottom: 0.5em;
+            }
+
+            .pretitle {
+                font-weight: 300;
+                font-size: 0.150em;
+                color: #adadad;
+                margin-bottom: 0.3em;
+            }
+
+            .button {
+                font-size: 0.075em;
+                padding: 0.5em 2em;
+                font-family: $base-font;
+                background-color: transparent;
+                color: #7e7e7e;
+                display: block;
+                text-align: center;
+                border: 2px solid #a4a4a4;
+                max-width: 20em;
+
+                &:hover {
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

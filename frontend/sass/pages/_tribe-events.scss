@@ -1,0 +1,141 @@
+#tribe-events {
+    .tribe-events-loop {
+        max-width: 100%;
+    }
+}
+
+#tribe-events-bar {
+    margin-bottom: 50px;
+}
+
+#tribe-bar-form {
+    .tribe-bar-submit input[type=submit] {
+        transition: all .2s ease-in-out 0s;
+        font-size: .938em;
+        padding: .867em 2.18em;
+        border-radius: 50px;
+        background-color: #ffae00;
+
+        &:hover {
+            background-color: lighten(#ffae00, 5%);
+        }
+    }
+}
+
+.events-list {
+    .tribe-events-read-more {
+        color: #333e48;
+        background-color: #efecec;
+        border-radius: 1.571em;
+        border-color: #efecec;
+        font-size: .875em;
+        display: inline-block;
+        padding: .5em 3.0224em;
+        letter-spacing: -.2px;
+        font-weight: 400;
+
+        &:hover {
+            background-color: #333e48;
+            border-color: #333e48;
+            color: #fff;
+        }
+    }
+}
+
+#tribe-events .tribe-events-content p {
+    margin-bottom: 1.4em;
+}
+
+.tribe-events-loop .tribe-events-event-meta {
+    font-size: 1em;
+    margin-bottom: 1em;
+    background: #f6f6f6;
+    padding: 12px 20px;
+    border-left: 4px solid #a3a3a3;
+
+    .tribe-events-venue-details,
+    .tribe-event-schedule-details {
+        &::before {
+            padding-right: 4px;
+        }
+    }
+
+    .tribe-event-schedule-details {
+        margin-bottom: .4em;
+        font-weight: 400;
+        font-style: italic;
+        font-size: .96em;
+
+        &::before {
+            content: "\f073";
+            font-family: $fa;
+            padding-right: 6px;
+            font-style: normal;
+        }
+    }
+
+    .tribe-events-venue-details {
+        &::before {
+            font-family: $font-pizzaro;
+            content: "\6f";
+            font-style: normal;
+        }
+    }
+
+    address.tribe-events-address,
+    .tribe-events-venue-details {
+        font-size: 0.96em;
+    }
+}
+
+.tribe-events-list-separator-month span {
+    font-weight: 600;
+}
+
+.tribe-events-list .type-tribe_events h2 {
+    font-size: 1.6em;
+    font-weight: normal;
+    margin-bottom: .6em;
+    display: block;
+}
+
+.single-tribe_events{
+    .tribe-events-single-event-title {
+        font-size: 2.4em;
+        font-weight: normal;
+        margin-bottom: .6em;
+        display: block;
+    }
+
+    .tribe-events-schedule h2 {
+        font-size: 1em;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .tribe-events-cal-links {
+        display: none;
+    }
+
+    .tribe-events-back {
+        margin-bottom: 40px;
+
+        a {
+            color: #333e48;
+            background-color: #efecec;
+            border-radius: 1.571em;
+            border-color: #efecec;
+            font-size: .875em;
+            display: inline-block;
+            padding: .5em 3.0224em;
+            letter-spacing: -.2px;
+            font-weight: 400;
+
+            &:hover {
+                background-color: #333e48;
+                border-color: #333e48;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,406 @@
+/**
+ * Cart
+ */
+table.cart {
+	margin-bottom: ms(6);
+    position: relative;
+
+	.product-thumbnail {
+		img {
+			max-width: 6em;
+			height: auto;
+			margin-bottom: 0;
+		}
+
+		&:before {
+			display: none;
+		}
+	}
+
+    thead {
+        th {
+            text-transform: capitalize;
+            font-weight: normal;
+            color: #747474;
+			padding-bottom: 6px;
+        }
+
+	        .product-name {
+            position: absolute;
+            left: 84px;
+        }
+    }
+
+	tbody {
+		tr {
+			td {
+				border-bottom: 1px solid #ddd;
+				padding: 2.5em 1em;
+			}
+
+			&:first-child td {
+				border-top: 1px solid #ddd;
+			}
+
+			.product-name a {font-weight: normal;}
+
+			.product-quantity {
+				label {display: none;}
+			}
+
+			.product-thumbnail {
+				padding: 2.5em 0;
+				width: 2em;
+			}
+
+			.product-name {width: 30em;}
+		}
+	}
+
+	td.product-remove {
+		@include clearfix;
+		position: relative;
+
+		a.remove {
+			font-size: 0.750em;
+			color: #a7a7a7;
+		}
+	}
+
+	td.product-quantity {
+
+		.quantity {
+			.minus,.plus {
+				background-color: #ededed;
+				border-radius: 100px;
+				border: none;
+				font-size: 1em;
+				line-height: 0.6;
+				width: 1.563em;
+				height: 1.563em;
+			}
+
+			.minus {
+				left: auto;
+    			right: 10px;
+			}
+
+			.plus {
+				top: 50%;
+				right: 40px;
+			}
+		}
+
+		.qty {
+			padding: .326em .8em;
+			width: 6.945em;
+			height: 2.334em;
+			font-weight: normal;
+			border-radius: 50px;
+			border: 1px solid #dddddd;
+		}
+
+		.minus + .qty {
+			padding: .326em .8em .326em 1.6em;
+			text-align: left;
+		}
+	}
+
+	.rp-donation-block {
+		td {
+			padding: 2.5em 0;
+		}
+		.text-donation {
+			margin-right: 0;
+		}
+
+		.button {
+			width: auto;
+		}
+	}
+
+	.coupon,.rp-donation-block .input{
+		font-size: 1em;
+		text-align: left;
+		float: left;
+		width: 392px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+
+		label[for="coupon_code"] {
+			display: none;
+		}
+
+		.input-text {
+			border: 1px solid #dddddd;
+			border-right: 0;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+			padding: 0.625em 1.8em;
+			width: 60%;
+			@include placeholder {
+			    font-size: 0.875em;
+			}
+		}
+
+		.button {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			margin-left: -4px;
+			font-size: 0.938em;
+			padding: 0.8em 1.856em;
+			font-weight: normal;
+			position: relative;
+			max-height: 50px;
+			background-color: #333e48;
+		}
+	}
+
+	th {
+		padding: ms(-1) ms(-1) 0;
+	}
+
+	td.product-subtotal {
+		padding-bottom: ms(-1);
+	}
+
+	td.actions {
+		background-color: transparent;
+		border: none;
+
+		label {
+			display: none;
+		}
+
+		> input {
+			font-weight: normal;
+			@include secondary-btn;
+
+			&[name="update_cart"] {
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+	}
+
+	.actions {
+		text-align: right;
+		font-size: 1em;
+		padding: 4em 0 0;
+
+		.wc-proceed-to-checkout {
+			display: inline-block;
+			margin-left: 0.5em;
+
+			.checkout-button {
+				font-weight: bold;
+
+				&::after {
+					content: none;
+				}
+			}
+		}
+	}
+}
+
+.fp_apply_reward {
+	font-size: 1em;
+	text-align: left;
+	float: left;
+	width: 450px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+
+	label[for="coupon_code"] {
+		display: none;
+	}
+
+	.input-text {
+		border: 1px solid #dddddd;
+		border-right: 0;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		padding: 0.625em 1.8em;
+		width: 60%;
+		@include placeholder {
+			font-size: 0.875em;
+		}
+	}
+
+	.button {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		margin-left: -4px;
+		font-size: 0.938em;
+		padding: 0.8em 1.856em;
+		font-weight: normal;
+		position: relative;
+		max-height: 50px;
+		background-color: #333e48;
+
+		&:hover {
+			background-color: #333e48;
+		}
+	}
+}
+
+.cxecrt-button-holder {
+	text-align: right;
+}
+
+.cxecrt-cart-page-button.button {
+	background-color: #333e48;
+	display: inline-block;
+
+	&:hover {
+		background-color: #333e48;
+	}
+}
+
+.wc-proceed-to-checkout {
+	@include clearfix;
+	margin-bottom: ms(3);
+
+	.button {
+		display: inline-block;
+		padding: 0.733em 2.433em;
+
+		&.checkout-button {
+			font-size: 0.938em;
+		}
+	}
+}
+
+ul#shipping_method {
+	margin: 0;
+	list-style: none;
+}
+
+a.remove {
+	display: block;
+	width: ms(3);
+	height: ms(3);
+	line-height: 1.618;
+	font-weight: 400;
+	text-indent: -9999px;
+	position: relative;
+
+	&:before {
+		content: "\79";
+		font-family: $font-pizzaro;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		color: $color_body;
+		line-height: 1.618;
+		text-indent: 0;
+		text-align: center;
+	}
+}
+
+.woocommerce-cart {
+	.cart-collaterals + .cross-sells {
+		h2 {
+			@extend .section-title;
+		}
+	}
+}
+
+.cart-collaterals {
+	@include make-md-column-offset(7);
+	margin-bottom: 80px;
+
+	h2 {
+		line-height: 1.6em;
+	    display: block;
+	    position: relative;
+	    padding-bottom: .4em;
+	    margin-bottom: 1.36em;
+	    font-weight: 400;
+	    font-size: 1.5em;
+
+		&::after {
+			content: ' ';
+		    border-bottom: 2px solid transparent;
+		    display: block;
+		    width: 114px;
+		    position: absolute;
+		    bottom: -1px;
+		}
+	}
+
+	.cart_totals {
+		table.shop_table {
+			@include make-table();
+
+			tbody {
+				tr {
+					th {
+						padding-left: 0;
+						font-size: 0.875em;
+					}
+
+					td {
+						padding-right: 0;
+						text-align: right;
+					}
+				}
+				tr:first-child {
+					td, th {
+						border-top-width: 0;
+					}
+				}
+			}
+		}
+
+		.wc-proceed-to-checkout {
+			display: none;
+		}
+	}
+
+	.shipping {
+		td {font-size: 0.875em;}
+	}
+}
+
+.woocommerce-shipping-calculator {
+	margin: 0;
+}
+
+.shipping-calculator-button {
+    font-size: .9em;
+    font-weight: 600;
+	margin-top: 16px;
+    display: inline-block;
+    border-bottom: 1px solid #3e3e3e;
+}
+
+.cart-empty,.return-to-shop {
+	text-align: center;
+}
+
+.cart-empty {
+	font-size: 3em;
+	margin-bottom: 1.2em;
+	line-height: 1;
+	font-weight: 100;
+}
+
+.shipping-calculator-form {
+	select {
+		@include c-select();
+		border-color: #ccc;
+		padding: .473em 1.2em;
+		border-radius: 50px;
+		height: 40px;
+	}
+}

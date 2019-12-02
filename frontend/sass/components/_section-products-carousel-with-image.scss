@@ -1,0 +1,110 @@
+.section-products-carousel-with-image {
+    padding: 6.250em 0;
+
+    @include stretch-full-width;
+
+    .section-title,.sub-title {
+        font-family: $secondary-font;
+    }
+
+    .section-title {
+        font-size: 4.5em;
+        font-weight: bold;
+        margin-bottom: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+        text-align: left;
+        line-height: 1;
+
+        &::after {display: none;}
+    }
+
+    .sub-title {
+        font-size: 1.875em;
+        color: #3b4035;
+        font-weight: 300;
+        border: none;
+        margin: 0;padding: 0;
+    }
+
+    .woocommerce {
+        margin-top: 1.875em;
+    }
+
+    .products {
+        text-align: center;
+
+        .owl-item >.product,.owl-item >.product:hover {
+            border: none;
+            padding: 0 6px;
+        }
+
+        .owl-item > .product {
+            h3 {
+                font-size: 1em;
+                color: #2d2b2d;
+                padding-top: 8px;
+                height: 1.8em;
+            }
+
+            img {
+                border: 1px solid transparent;
+            }
+        }
+
+        .owl-nav {
+            .owl-next,.owl-prev {
+                position: absolute;
+                top: 32%;
+
+                i {
+                    font-size: 1.875em;
+                    color: #cdcac5;
+                    &:hover {color: #3b4035;}
+                }
+            }
+
+            .owl-next {
+                right: -1.125em;
+            }
+
+            .owl-prev {
+                left: -1.125em;
+            }
+        }
+    }
+
+    .nav {
+        margin: 0;
+        padding: 1.500em 0 3.125em 0;
+
+        .nav-item,.nav-item a {
+            padding: 0;
+            display: inline-block;
+        }
+
+        .nav-item {
+
+            span {padding-left: 6px;font-weight: bold;color: #3b4035;}
+
+            a,h5{
+                font-size: 0.875em;
+                font-weight: normal;
+                color: #9a9a9a;
+            }
+
+            a:hover,a:focus {
+                background-color: transparent;
+                color: #3b4035;
+            }
+        }
+
+        .nav-item + .nav-item {
+            color: #9a9a9a;
+            &::before {
+                content: "/";
+                padding: 0 6px;
+            }
+        }
+    }
+}

@@ -1,0 +1,252 @@
+/**
+ * Footer v2
+ */
+.site-footer.footer-v2 {
+	background-color: #232d35;
+	color: #ddd;
+	padding-top: 4.125em;
+	padding-bottom: 4.125em;
+
+	.footer-contact-form {
+		@include make-column;
+		@include make-xs-column(12);
+		@include make-sm-column(12);
+		@include make-md-column(6);
+		@include make-lg-column(6);
+	}
+
+	.footer-store-info, .footer-contact-info {
+		@include make-column;
+		@include make-xs-column(12);
+		@include make-sm-column(12);
+		@include make-md-column(3);
+		@include make-lg-column(3);
+	}
+
+	.footer-store-info {
+		.pizzaro-logo,a img {
+			width: 140px;
+		}
+
+		.store-timings,.social-icon-text {
+			font-size: 0.938em;
+		}
+
+		.social-icons {
+			display: inline-block;
+			float: right;
+		}
+	}
+
+	.footer-logo {
+		margin: 0;
+		margin-bottom: 2.188em;
+
+		.site-title {
+			margin: 0;
+		}
+
+		.site-description {color: #888;}
+
+		.custom-logo-link .custom-logo {
+			margin: 0;
+		}
+	}
+
+	ul.store-timings {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		margin-bottom: 1.250em;
+
+		> li {
+			@include clearfix;
+		}
+
+		.store-timing-label {
+			float: left;
+		}
+
+		.store-timing-value {
+			float: right;
+		}
+	}
+
+	ul.social-icons {
+		padding: 0;
+		margin: 0;
+
+		> li {
+			display: inline-block;
+
+			a {
+				color: #c8cacc;
+				font-size: 1.2em;
+
+				@include hover-focus {
+					color: #fff;
+				}
+			}
+
+			& + li {
+				margin-left: 1.750em;
+			}
+		}
+	}
+
+	.footer-contact-form {
+		.contact-form {
+			background-color: #fff;
+			margin: 0 auto;
+			padding: 2.875em 2.188em 2.375em 2.188em;
+			position: absolute;
+			width: 83%;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: -32px;
+
+			label {
+				display: none;
+			}
+
+			form {
+				margin: 0;
+
+				.form-control {
+					height: 50px;
+					border-color: #ccc;
+					box-shadow: none;
+					padding-left: 23px;
+
+					&:focus {border-color: #ccc;}
+				}
+
+				textarea.form-control {
+					height: auto;
+					border-radius: 20px;
+					padding: 15px 25px;
+					margin-bottom: 26px;
+				}
+
+				.button {
+					background-color: #b8b8b8;
+					font-size: 0.938em;
+					padding: 0.867em 2.18em;
+
+					&:hover {
+						background-color: darken(#b8b8b8, 30%);
+					}
+				}
+			}
+
+			.contact-form-title {
+				font-weight: normal;
+				font-family: $secondary-font;
+				text-align: center;
+				color: #393939;
+				font-size: 2.250em;
+				border-bottom: 1px dashed #c2c1c0;
+				padding-bottom: 0.444em;
+				margin-bottom: 1em;
+			}
+		}
+	}
+
+	.footer-contact-info {
+		.address {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			> li {
+				@include clearfix;
+				margin-bottom: 28px;
+
+				i {
+					float: left;
+					display: block;
+					width: 40px;
+				}
+
+				.address-text {
+					font-size: 0.938em;
+					display: block;
+					float: left;
+					line-height: 1.6;
+					width: calc( 100% - 40px );
+				}
+
+				.fa {
+					font-size: 28px;
+					line-height: 28px;
+
+					&::before {margin-left: 8px;}
+				}
+
+				.po {
+					font-size: 24px;
+					line-height: 28px;
+				}
+
+				.po-mail-icon {
+					font-size: 22px;
+
+					&::before {
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer-v2 + .site-info {
+	background-color: #131b21;
+	margin: 0;
+	padding: 2.188em 0;
+
+	.copyright {
+		font-size: 0.875em;
+		color: #919293;
+		text-align: center;
+	}
+}
+
+.footer-map {
+	height: 462px;
+	background-color: #cbcbcb;
+
+	iframe {
+		width: 100%;
+		border: none;
+	}
+}
+
+.footer-about-info {
+	background-color: #f5f5f5;
+	padding-top: 46px;
+	padding-bottom: 10px;
+
+	.image img{
+		position: relative;
+		top: -76px;
+	}
+
+	h2 {
+		color: #2d2b2d;
+		font-size: 1.5em;
+		margin-bottom: 1.542em;
+	}
+
+	.content {padding-left: 20px;}
+
+	p {
+		color: #666666;
+		margin-bottom: 1.8em;
+	}
+
+	a {
+		color: #6d6d6d;
+		font-size: .86em;
+	}
+}

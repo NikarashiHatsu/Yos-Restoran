@@ -1,0 +1,118 @@
+.food-type-filter {
+    font-size: 0.813em;
+    text-align: left;
+    clear: both;
+
+    div, ul li {
+        display: inline-block;
+    }
+
+    ul li,ul,.widget {
+        margin: 0;
+    }
+
+    .food-type-icon {
+        float: left;
+    }
+
+    .widget_layered_nav li:before,.count {display: none;}
+
+    .clear-food-type-filter a, ul li a{
+        text-transform: uppercase;
+        padding: 7.5px 30px;
+        display: inline-block;
+
+        &:hover {
+            color: #464646;
+        }
+    }
+
+    .clear-food-type-filter , ul li {
+        border-radius: 50px;
+        margin-right: 16px;
+        position: relative;
+        border: 1px solid #d7d7d7;
+
+        &:hover {
+            background-color: #d7d7d7;
+            border: 1px solid #d7d7d7;
+        }
+    }
+
+    ul li {
+        a {
+            padding: 7.5px 30px 7.5px 40px;
+        }
+    }
+
+    .food-type-icon {
+        margin-right: 10px;
+        position: absolute;
+        top: 8px;
+        left: 22px;
+    }
+
+    .clear-food-type-filter.chosen a,
+    .wc-layered-nav-term.chosen a{
+        font-weight: bold;
+        color: #464646;
+
+        a {
+            color: #464646;
+            font-weight: bold;
+        }
+    }
+
+    .clear-food-type-filter.chosen,
+    .wc-layered-nav-term.chosen {
+        background-color: #f5f5f5;
+        border: 1px solid #f5f5f5;
+    }
+
+    a {
+        color: #515151;
+    }
+}
+
+.dark .food-type-filter {
+    .clear-food-type-filter.chosen a,
+    .wc-layered-nav-term.chosen a{
+        border-width: 2px;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    ul li {
+        &:hover {
+            a {
+                color: #515151;
+            }
+        }
+    }
+
+    a {
+        color: #fff;
+    }
+}
+
+.create-your-own {
+    float: right;
+
+    a {
+        text-transform: uppercase;
+        color: #fff;
+        padding: 1em 2em;
+        font-weight: bold;
+        border-radius: 50px;
+        line-height: 1.5;
+        display: inline-block;
+        background-color: #ffae00;
+
+        &:hover {
+            background-color: darken(#ffae00, 3%);
+            color: #fff;
+        }
+    }
+}

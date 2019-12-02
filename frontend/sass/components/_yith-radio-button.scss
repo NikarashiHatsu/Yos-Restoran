@@ -1,0 +1,76 @@
+.ywapo_input_container_radio {
+
+    display: inline-block;
+    position: relative;
+    margin: 0 0.750em 1em 0.750em;
+
+    input,input[type=radio] {
+        opacity: 0;
+        position: absolute;
+        height: 48px;
+        width: 100%;
+        z-index: 2;
+        margin: 0;
+    }
+
+    .ywapo_label_tag_position_after,label {
+        width: 48px;
+        height: 48px;
+        line-height: 1;
+        font-size: 0.813em;
+        position: relative;
+        color: #2b2929;
+        font-weight: 600;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0;
+
+        &::before {
+            content: " ";
+            width: 48px;
+            border-radius: 100%;
+            height: 48px;
+            border: 2px solid #f9f1db;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            transition: all 0.2s ease-in-out 0s;
+        }
+
+        span {
+            width: 30px;
+            display: inline-block;
+            line-height: 12px;
+            padding: 12px 0;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    &:hover {
+        .ywapo_label_tag_position_after::before {
+            background-color: #ffcd00;
+            border: 2px solid #ffcd00;
+        }
+    }
+
+    .ywapo_label_price {
+        line-height: 1;
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 10px;
+
+        .woocommerce-Price-currencySymbol {
+            vertical-align: top;
+            font-size: small;
+        }
+
+        .amount {
+            font-size: 1.250em;
+            color: #2d2b2d;
+            font-weight: normal;
+        }
+    }
+}

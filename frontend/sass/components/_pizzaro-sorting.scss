@@ -1,0 +1,49 @@
+.woocommerce-page.archive {
+    &.left-sidebar,
+    &.right-sidebar {
+        .pizzaro-sorting {
+            padding-bottom: 20px;
+            margin-bottom: 48px;
+        }
+    }
+
+    &.full-width {
+        .pizzaro-sorting {
+            @include stretch-full-width;
+            padding-bottom: 36px;
+            margin-bottom: 50px;
+
+            .food-type-filter {
+                @extend .container;
+            }
+        }
+    }
+
+    .pizzaro-sorting {
+        @include clearfix;
+        border-bottom: 1px solid #ebeaf1;
+        position: relative;
+
+        select {
+            width: auto;
+        }
+
+        form {
+            margin-bottom: 0;
+        }
+    }
+
+    &.dark .pizzaro-sorting {border: none;}
+
+    &.dark.full-width {
+        .pizzaro-sorting {
+            margin-bottom: 6px;
+        }
+    }
+
+    &.dark.full-width.grid-view {
+        .food-type-filter {
+            padding: 0 30px;
+        }
+    }
+}

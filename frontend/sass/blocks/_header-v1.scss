@@ -1,0 +1,94 @@
+.header-v1 {
+    padding-bottom: 0;
+
+    .site-branding,
+    .main-navigation,
+    .header-info-wrapper,
+    .header-phone-numbers,
+    .site-header-cart,
+    .site-header-cart-v2 {
+        @include make-column;
+    }
+
+    .site-branding {
+        @include make-xs-column(12);
+        @include make-sm-column(2);
+        @include make-md-column(2);
+        padding: 0;
+
+        .site-title,.site-description {color: #fff;}
+    }
+
+    .header-wrap {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .main-navigation {
+        @include make-xs-column(12);
+        @include make-sm-column(5);
+        @include make-md-column(5);
+    }
+
+    .header-info-wrapper {
+        @include make-xs-column(12);
+        @include make-sm-column(5);
+        @include make-md-column(5);
+        padding: 0;
+    }
+
+    .header-phone-numbers {
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(6);
+        padding-left: 0;
+        padding-right: 32px;
+    }
+
+    .site-header-cart,
+    .site-header-cart-v2 {
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(6);
+        padding: 0;
+    }
+
+    .secondary-navigation {
+        margin-bottom: 0;
+    }
+
+    .primary-navigation {
+        text-align: center;
+        margin-bottom: 0;
+        .menu,
+        .menu ul.nav-menu {
+            > li {
+                > a {
+                    &::before {
+                        content: " ";
+                        display: block;
+                        height: 2px;
+                        width: 42px;
+                        margin: 0 auto;
+                        margin-top: 6px;
+                        background-color: #ffae00;
+                        visibility: hidden;
+                        bottom: 14px;
+                        left: 50%;
+                        position: absolute;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                &:hover {
+                    > a {
+                        &::before {
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

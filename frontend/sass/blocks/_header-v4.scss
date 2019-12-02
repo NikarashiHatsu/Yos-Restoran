@@ -1,0 +1,145 @@
+.header-v4 {
+    padding: 18px 0;
+
+    .col-full {
+        width: 100%;
+        padding: 0 52px;
+        display: flex;
+        align-items: center;
+    }
+
+    .site-branding,
+    .main-navigation,
+    .site-header-cart {
+        @include make-column;
+    }
+
+    .site-branding {
+        @include make-xs-column(12);
+        @include make-sm-column(2);
+        @include make-md-column(2);
+        padding: 0;
+
+        .pizzaro-logo,a img{
+            width: 162px;
+            display: block;
+        }
+    }
+
+    .main-navigation {
+        @include make-xs-column(12);
+        @include make-sm-column(8);
+        @include make-md-column(8);
+    }
+
+    .site-header-cart {
+        @include make-xs-column(12);
+        @include make-sm-column(2);
+        @include make-md-column(2);
+        padding: 0;
+
+        .cart-contents {
+            float: right;
+
+            .amount span {display: none;}
+        }
+    }
+
+    .primary-navigation {
+        margin-bottom: 0;
+        text-align: center;
+
+        ul.menu>li>a,
+        ul.nav-menu>li>a {padding: 1.8em 1.84em 1.618em;}
+
+        .current-menu-item {
+            > a {
+                color: #262626;
+            }
+        }
+
+        .menu > li > a::before,
+        .current-menu-item > a::before {
+            content: " ";
+            display: block;
+            height: 2px;
+            width: 42px;
+            margin: 0 auto;
+            margin-top: 6px;
+            background-color: #ffae00;
+            bottom: 14px;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+        }
+
+        .menu {
+            > li {
+                > a {
+                    &::before {
+                        visibility: hidden;
+                    }
+                }
+
+                &:hover {
+                    > a {
+                        &::before {
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu .current-menu-item > a::before {
+            visibility: visible;
+        }
+    }
+}
+
+.lite-bg.header-v4 {
+    &.site-header {background-color: #fff;}
+
+    .primary-navigation {
+        text-align: right;
+
+        .menu > li {
+            > a {
+                color: #969696;
+            }
+
+            &:hover,
+            &.focus {
+                a {
+                    color: #262626;
+                }
+            }
+
+            .sub-menu {
+                li {
+                    &:hover,
+                    &.focus {
+                        > a {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu .current-menu-item {
+            > a {
+                color: #262626;
+            }
+        }
+    }
+
+    .site-header-cart .cart-contents {
+        color: #a3a3a3;
+
+        .amount {color: #262626;}
+
+        .count {color: #fff;}
+    }
+}

@@ -1,0 +1,235 @@
+@include media-breakpoint-up(lg) {/*min-width: 992px*/
+    @include media-breakpoint-down(lg) {/*(max-width: 1199px)*/
+        .right-sidebar.list-view.columns-2,
+        .left-sidebar.list-view.columns-2 {
+            ul.products li.product {
+                .product-inner {
+                    display: -webkit-flex;
+                    display: -moz-flex;
+                    display: -ms-flex;
+                    display: -o-flex;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .menu-toggle,
+	.handheld-navigation,
+	.main-navigation.toggled .handheld-navigation,
+	.main-navigation.toggled div.menu {
+		display: none;
+	}
+
+    .main-navigation,
+    .primary-navigation,
+	.secondary-navigation {
+        display: block;
+    }
+
+    /**
+	 * Handheld footer bar
+	 */
+	.pizzaro-handheld-footer-bar {
+		display: none;
+	}
+
+    .site-content {
+		@include clearfix;
+	}
+
+	.right-sidebar {
+		.content-area {
+			@include span(9 of 12);
+		}
+
+		.widget-area {
+			@include span(last 3 of 12);
+		}
+	}
+
+	.left-sidebar {
+		.content-area {
+			@include span(last 9 of 12);
+		}
+
+		.widget-area {
+			@include span(3 of 12);
+		}
+	}
+}
+
+@media (max-width: 1199px) {
+    .site-header {
+        z-index: 10000;
+        padding: 1.618em 0;
+        .header-info-wrapper,
+        .site-header-cart {
+            display: none;
+        }
+
+        button.menu-toggle {
+            background: none;
+        }
+
+        .site-branding {
+            max-width: 180px;
+            padding: 0;
+        }
+
+        .main-navigation {
+            float: right;
+            width: 20px;
+            padding: 0;
+            text-align: left;
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+    }
+
+    .header-v1 {
+        .header-wrap {
+            justify-content: space-between;
+            margin-bottom: 0;
+        }
+
+        &.site-header .main-navigation {
+            margin-top: 0;
+        }
+    }
+}
+
+@media (max-width: 1025px) {
+    .section-product-categories .categories .category a .caption h4 {
+        font-size: 5em;
+    }
+
+    .page-template-template-homepage-v2 .header-v2 {
+        position: relative;
+        margin-bottom: 0;
+
+        .main-navigation {
+            position: absolute;
+            right: 30px;
+            top: 0;
+            margin: 0;
+        }
+    }
+
+    .page-template-template-homepage-v3 .header-v3 .main-navigation,
+    .page-template-template-homepage-v4 .header-v3 .main-navigation,
+    .page-template-template-homepage-v5 .header-v4 .main-navigation,
+    .page-template-template-homepage-v7 .header-v4 .main-navigation {
+        position: absolute;
+        right: 0;
+        top: 4px;
+        margin-top: 0;
+    }
+
+    .header-v4 .col-full {
+        padding: 0 15px;
+    }
+
+    .page-template-template-homepage-v4 button.menu-toggle i,
+    .page-template-template-homepage-v5 button.menu-toggle i {
+        color: #000;
+    }
+
+    .page-template-template-homepage-v6 {
+        .header-v1,
+    	.header-v2,
+    	.header-v3,
+    	.header-v4 {
+            box-shadow: 0 4px 16px rgba(1,1,1,.15);
+
+            .site-branding {
+                padding: 0 0 0 15px;
+                margin-bottom: 0;
+            }
+
+            .main-navigation {
+                width: 20px;
+                position: absolute;
+                right: 0;
+                top: 4px;
+                margin-top: 0;
+
+                button.menu-toggle i {
+                    color: #000;
+                }
+            }
+
+            .col-full {
+                margin: 1.6em 0 1em 0;
+            }
+
+            .custom-logo-link {
+                width: 100%;
+            }
+
+            .footer-social-icons,.site-info {
+                display: none;
+            }
+        }
+    }
+
+    .site-footer,
+    .footer-v2 + .site-info {
+        margin-bottom: 69px;
+    }
+
+    .footer-v1 + .footer-map.in {
+        margin-top: -69px;
+        margin-bottom: 69px;
+    }
+
+    .site-footer.footer-v2 {
+        margin-bottom: 0;
+    }
+
+    .site-footer.footer-v3,
+    .site-footer.footer-v4 {
+        .col-full {
+            padding: 0 15px;
+        }
+
+        .footer-row{
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .footer-logo,
+        .vertical-align,
+        .site-address,
+        .footer-menu,
+        .footer-social-icons {
+            display: block;
+            width: 100%;
+        }
+
+        .footer-logo,
+        .site-address,
+        ul.footer-menu {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo,
+        .footer-menu,
+        .footer-social-icons,
+        .social-icons {
+            text-align: center;
+        }
+    }
+
+    .site-footer.footer-v5 {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .footer-newsletter {
+            width: 100%;
+        }
+    }
+}

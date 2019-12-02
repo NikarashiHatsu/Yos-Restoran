@@ -1,0 +1,134 @@
+.section-products-4-1 {
+    .products-4-1 {
+        @include make-row;
+
+        .columns-1,
+        .columns-2 {
+            @include make-column;
+    		@include make-xs-column(12);
+    		@include make-sm-column(6);
+    		@include make-md-column(6);
+    		@include make-lg-column(6);
+        }
+
+        .columns-1 {
+            .products .owl-item>.product .onsale, ul.products li.product .onsale {
+                z-index: 9;
+                top: 0;
+            }
+
+            ul.products li.product {
+                padding: 0;
+                border-width: 5px;
+                margin-bottom: 0;
+
+                &:hover{
+                    border-width: 5px;
+
+                    .hover-area {
+                        padding: 0;
+                    }
+                }
+
+                .woocommerce-LoopProduct-link > h3 {
+                    font-size: 1.500em;
+                }
+
+                img {
+                    margin-bottom: 1.9em;
+                }
+
+                div[itemprop=description] {
+                    display: block;
+                    padding: 0 2em;
+
+                    p {
+                        margin-bottom: 1.5em;
+                    }
+                }
+
+                .product-image-wrapper {
+                    //min-height: 600px;
+                }
+
+                .product-content-wrapper {
+                    position: relative;
+                }
+
+                .product-image-wrapper,
+                .product-content-wrapper {
+                    border-color: #e9e9e9;
+                }
+
+                .hover-area {
+                    display: block;
+                    height: 3.125em;
+                }
+
+                .ywapo_group_container_radio  {
+
+                    h3 {
+                        margin: .857em 1em 1.9em;
+
+                        &::before {
+                            width: 60%;
+                        }
+                    }
+                }
+
+                .button {
+                    position: relative;
+                    bottom: -26px;
+                }
+
+                .owl-nav {
+
+                    .owl-prev,.owl-next {
+                        position: absolute;
+                        top: 76%;
+
+                        i {
+                            font-size: 1.750em;
+                            color: #a09481;
+                            background-color: #f6eada;
+                            padding: 0.214em 0.786em;
+                            border-radius: 1.786em;
+                        }
+
+                        &.disabled {
+                            cursor: not-allowed;
+                        }
+                    }
+
+                    .owl-prev {
+                        left: -47px;
+                    }
+
+                    .owl-next {
+                        right: -47px;
+                    }
+                }
+            }
+        }
+
+        .columns-2 {
+            ul.products li.product {
+
+                div[itemprop=description] {display: none;}
+
+                .ywapo_input_container_radio {
+                    margin: 0 .4em 1em;
+
+                    .ywapo_label_price {
+                        padding-left: 6px;
+
+                        .amount {
+                            font-size: 1.063em;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.site-header.stuck {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	padding: 6.54px 0;
+	margin: 0;
+}
+
+.header-v1.stuck {
+	.primary-navigation {
+		margin-bottom: 0;
+	}
+	
+	.pizzaro-secondary-navigation {
+		display: none;
+	}
+}
+
+.header-v4.lite-bg.stuck {
+	box-shadow: 0 4px 16px rgba(1, 1, 1, 0.15);
+}
+
+.site-header.stuck {
+	.handheld-navigation {
+		padding-top: 0;
+	}
+}
+
+@include susy-media($desktop) {
+	.admin-bar {
+		.site-header.stuck {
+			top: 32px;
+		}
+	}
+}

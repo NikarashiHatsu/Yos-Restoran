@@ -1,0 +1,388 @@
+/**
+ * Main Naivgation
+ */
+
+/**
+ * General Menu Styles
+ */
+.secondary-navigation {
+	display: none;
+}
+
+button.menu-toggle {
+	cursor: pointer;
+	text-align: left;
+	float: right;
+	position: relative;
+	border: none;
+	background-image: none;
+	padding: 0;
+	font-size: .857em;
+
+	&:hover {
+		background-image: none;
+	}
+
+	span:before {
+		@include transition(all,ease,.2s);
+	}
+
+	&:before,
+	&:after,
+	span:before {
+		content: "";
+		display: block;
+		height: 2px;
+		width: 14px;
+		position: absolute;
+		top: 50%;
+		left: 1em;
+		margin-top: -1px;
+		@include transition(all,ease,.2s);
+		border-radius: 3px;
+	}
+
+	&:before {
+		@include transform(translateY(-4px));
+	}
+
+	&:after {
+		@include transform(translateY(4px));
+	}
+
+	.close-icon {display: none;}
+}
+
+.toggled {
+	button.menu-toggle {
+		&:before,
+		&:after {
+			@include transform(translateY(0));
+			@include transform(rotate(45deg));
+		}
+
+		&:after {
+			@include transform(rotate(-45deg));
+		}
+
+		span:before {
+			opacity: 0;
+		}
+
+		.menu-icon {display: none;}
+
+		.close-icon {display: block;}
+	}
+}
+
+.primary-navigation {
+	display: none;
+}
+
+.main-navigation {
+	@include clearfix;
+
+	div.menu {
+		display: none; // Hide the default menu to stop both it and the handheld menu displaying, when no primary menu has been set...
+	}
+
+	div.menu:last-child {
+		display: block; // ... but display it if a handheld menu hasn't been set either.
+	}
+
+	.menu {
+		clear: both;
+	}
+}
+
+.handheld-navigation,
+.nav-menu,
+.main-navigation div.menu > ul:not(.nav-menu) {
+	overflow: hidden;
+	max-height: 0; /* We have to use max-height because `height` isn't animatable */
+	@include transition(all,ease,.8s);
+}
+
+.handheld-navigation {
+	clear: both;
+
+	ul {
+		margin: 0;
+	}
+}
+
+.main-navigation.toggled {
+	.handheld-navigation,
+	.menu > ul:not(.nav-menu),
+	ul[aria-expanded=true] {
+		max-height: 1750px;
+	}
+}
+
+.main-navigation ul {
+	margin-left: 0;
+	list-style: none;
+	margin-bottom: 0;
+
+	ul {
+		display: block;
+		margin-left: 1.387em;
+	}
+
+	li {
+		a {
+			padding: .857em 0;
+			display: block;
+		}
+
+		&:hover,
+		&.focus {
+			> a {
+				color: #e6e6e6;
+			}
+		}
+	}
+}
+
+@include susy-media($desktop) {
+	.primary-navigation,
+	.secondary-navigation {
+		width: 100%;
+
+		// first level
+		ul {
+			list-style: none;
+			margin: 0;
+			padding-left: 0;
+			display: block;
+
+			li {
+				position: relative;
+				display: inline-block;
+				text-align: left;
+
+				a {
+					display: block;
+				}
+
+				// link hover
+				&:hover,
+				&.focus {
+					> ul {
+						left: 0;
+						display: block;
+
+						li {
+							> ul {
+								display: none; // display: none; is required to make dropdowns work on touch devices
+							}
+
+							&:hover,
+							&.focus {
+								> ul {
+									left: 100%;
+									top: 0;
+									display: block;
+								}
+							}
+						}
+					}
+				}
+
+			}
+
+			// second level
+			ul.sub-menu,
+			ul.children {
+				float: left;
+				position: absolute;
+				top: 100%;
+				z-index: 99999;
+				display: none; // display: none; is required to make dropdowns work on touch devices
+				border-radius: 6px;
+				box-shadow: 0 0 6px 0 rgba(1,1,1,.3);
+
+				li {
+					a {
+						width: 200px;
+					}
+				}
+			}
+		}
+
+	}
+
+	/**
+	 * Secondary Navigation
+	 */
+	.pizzaro-secondary-navigation {
+		clear: both;
+		@include clearfix;
+		margin-left: -99em;
+		margin-right: -99em;
+		padding-left: 99em;
+		padding-right: 99em;
+	}
+
+	.secondary-navigation {
+		border-top: 1px solid rgba( 255, 255, 255, 0.17 );
+
+		ul.menu,
+		ul.nav-menu {
+			max-height: none;
+			overflow: visible;
+			text-align: center;
+
+			> li {
+				// The first level menu item
+				> a {
+					padding: 2em 0;
+					color: #ffc0ca;
+					font-size: 1em;
+					line-height: 2.813em;
+
+					i {
+						font-size: 2.813em;
+						display: inline-block;
+						float: left;
+						margin-right: 0.4em;
+
+						&.icon {
+							font-size: 76px;
+    						margin-right: 5px;
+    						margin-left: -16px;
+						}
+					}
+
+					&:hover, &:focus {
+						color: #fff;
+						text-shadow: 0 0 .65px #fff, 0 0 .65px #fff;
+					}
+				}
+
+				& + li {
+					margin-left: 32px;
+				}
+			}
+
+			ul {
+				// Dropdowns
+				margin-left: 0;
+
+				li {
+					a {
+						padding: .857em 1.387em;
+						font-weight: 400;
+						font-size: .857em;
+					}
+
+					&:last-child {
+						border-bottom: 0;
+					}
+
+					&.menu-item-has-children,
+					&.page_item_has_children {
+						> a {
+							&:after {
+								// The dropdown indicator
+								@include fa-icon();
+								content: "\f105";
+								float: right;
+								line-height: 1.118;
+							}
+						}
+					}
+				}
+
+				ul {
+					margin-left: 0;
+					box-shadow: none;
+				}
+
+				a:hover,
+				li:hover > a {
+					background-color: rgba(0,0,0,0.025);
+				}
+			}
+		}
+
+		a {
+			padding: 0 1em 2.244em;
+		}
+	}
+
+	/**
+	 * Primary Navigation
+	 */
+	.primary-navigation {
+		margin: 0 0 1.618em;
+		width: auto;
+		clear: none;
+		line-height: 1;
+
+		.menu,
+		.menu .nav-menu {
+			font-size: 0.938em;
+			width: auto;
+
+			> li {
+				> a {
+					position: relative;
+					color: #fff;
+					font-weight: bold;
+				}
+
+				&:hover,
+				&.focus {
+					> a {
+						text-decoration: none;
+					}
+				}
+			}
+
+			li.current-menu-item>a::after {visibility: visible;}
+
+			ul {
+				padding: 10px 0;
+				background-color: #fff;
+
+				a {
+					padding: .326em .857em;
+					color: #464646;
+				}
+
+				li:first-child a {
+					padding-top: 1em;
+				}
+
+				li:last-child a {
+					padding-bottom: 1em;
+				}
+
+				ul {
+					margin-top: -.618em;
+				}
+			}
+
+			a {
+				padding: 1.387em 1.5em;
+				font-weight: 300;
+				color: lighten( $color_body, 20% );
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+
+		div.menu {
+			> ul {
+				background-color: transparent;
+
+				li:hover > a {
+					color: #e6e6e6;
+				}
+			}
+		}
+	}
+}

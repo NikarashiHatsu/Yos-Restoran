@@ -1,0 +1,19 @@
+.track_order {
+	font-size: .875em;
+
+	> p:first-child {
+		text-align: center;
+		margin: 0 auto 2.714em;
+		width: 90%;
+		font-size: 1.071em;
+	}
+
+	.form-row label {
+		font-weight: bold;
+		color: #333e48;
+	}
+
+	.clear {
+		margin-bottom: 1.2em;
+	}
+}

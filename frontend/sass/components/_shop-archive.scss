@@ -1,0 +1,73 @@
+.shop-archive-header {
+	background-color: #cccccc;
+	min-height: 300px;
+	text-align: center;
+	position: relative;
+	margin-bottom: 3.286em;
+
+	.shop-archive-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
+
+	.title {
+		font-weight: bold;
+		line-height: 1.1em;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: $secondary-font;
+        font-size: 5.625em;
+        margin-bottom: 0.133em;
+	}
+
+    .woocommerce-breadcrumb {
+        font-size: .875em;
+        color: #fff;
+
+        a {color: #fff;}
+
+        span.delimiter+a {
+            background-color: transparent;
+            padding: 0;
+        }
+    }
+
+	.description {
+		font-size: 1.143em;
+		color: #999;
+		line-height: 1.5em;
+		margin-bottom: 0;
+		font-style: italic;
+		font-weight: 100;
+		letter-spacing: 0.025em;
+	}
+}
+
+.tax-product_cat .site-header{
+    margin-bottom: 0;
+}
+
+.tax-product_cat .header-v2 {
+    position: absolute;
+    width: 100%;
+    background: transparent;
+}
+
+.header-v2 + .shop-archive-header {
+    height: 343px;
+
+    .shop-archive-content {
+        top: 71.6%;
+    }
+}
+
+.full-width.grid-view .shop-archive-header + .site-content,
+.full-width.list-view .shop-archive-header + .site-content,
+.left-sidebar.grid-view .shop-archive-header + .site-content,
+.left-sidebar.list-view .shop-archive-header + .site-content,
+.right-sidebar.grid-view .shop-archive-header + .site-content,
+.right-sidebar.list-view .shop-archive-header + .site-content {
+	padding-top: 0;
+}

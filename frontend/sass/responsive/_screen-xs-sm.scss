@@ -1,0 +1,215 @@
+// 320px Upto 991px
+
+@include media-breakpoint-down(md) {
+
+    .list-view.section-products {
+        margin-top: 3em;
+    }
+
+    .section-product-categories {
+        margin-bottom: 3.5em;
+    }
+
+    .section-products-carousel-with-image {
+        .section-title {
+            font-size: 3.6em;
+        }
+    }
+
+    #wpsl-search-wrap .wpsl-input {
+        margin-bottom: 20px;
+    }
+
+    .wpsl-search form {
+        display: inline-block;
+    }
+
+    .wpsl-search .wpsl-select-wrap {
+        width: 62%;
+        text-align: left;
+    }
+
+    .wpsl-search .wpsl-search-btn-wrap {
+        padding: 0;
+        margin-top: 24px;
+    }
+
+    .woocommerce-account .woocommerce-MyAccount-content,
+    .woocommerce-account .woocommerce-MyAccount-navigation {
+        display: block;
+        width: 100%;
+    }
+
+    .woocommerce-account .woocommerce {
+        display: block;
+    }
+
+    .section-events {
+        .events .event {
+            .media-left,
+            .media-body {
+                display: block;
+                width: 100%;
+            }
+
+            .media-left {
+                padding: 0;
+                margin-bottom: 20px;
+
+                .event-date {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .section-coupon {
+        .coupon-bg {height: 500px;}
+
+        .caption {
+            font-size: 7em;
+
+            .coupon-code {
+                line-height: 0.84;
+                margin-bottom: 20px;
+            }
+
+            .coupon-info {
+                padding-left: 0;
+
+                .pretitle {
+                    font-size: .2em;
+                }
+
+                .button {font-size: .1em;}
+            }
+        }
+    }
+
+    .banner.social-block {
+        margin-bottom: 0;
+
+        .banner-bg {
+            height: 535px;
+        }
+
+        .caption {
+            font-size: 6em;
+        }
+    }
+
+    .section-recent-post {
+        height: 535px;
+
+        .post-wrap {
+            transform: translate(-50%,-50%);
+            width: 80%;
+        }
+
+        .section-title {
+            font-size: 3em;
+            line-height: 1;
+            margin-bottom: .6em;
+        }
+
+        .post-title {
+            font-size: 1.6em;
+        }
+
+        .post-info {
+            p {
+                font-size: 1em;
+            }
+
+            .btn-more {font-size: .8em;}
+        }
+    }
+
+    .section-recent-posts {
+        padding: 5em 0;
+
+        .section-title {font-size: 3em;}
+
+        .post-items {
+            padding: 0 1em;
+
+            .post-item {
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+
+    .banner.center-right .caption {
+        left: 50%;
+        font-size: 9em;
+        width: 86%;
+
+        .condition {font-size: .1em;}
+    }
+
+    .newsletter-subscription {
+        .caption {
+            padding: 0 6%;
+        }
+    }
+
+    .list-view .columns-2 ul.products,
+    .list-view.columns-2 ul.products {
+        margin-left: 0;
+        margin-right: 0;
+
+        li.product {
+            margin-bottom: 2em;
+        }
+
+        .button {
+            line-height: 1.4;
+            font-size: 0.8em;
+            padding: 1em 2.4em;
+        }
+    }
+
+
+    .page-template-template-homepage-v2 .list-view.section-products {
+        .columns-2 ul.products .button{
+            display: inline-block;
+        }
+    }
+
+
+    .footer-about-info {
+        padding-bottom: 40px;
+
+        .image {
+            margin-bottom: 40px;
+
+            img {
+                top: 0;
+            }
+        }
+    }
+
+    .site-footer.footer-v2 {
+        .vertical-align {
+            display: block;
+        }
+
+        .footer-store-info {
+            margin-bottom: 50px;
+        }
+
+        .footer-contact-form .contact-form {
+            position: relative;
+            left: auto;
+            transform: none;
+            width: 100%;
+            bottom: 0;
+            margin-bottom: 50px;
+        }
+    }
+
+    .create-your-own {
+        float: none;
+    }
+}

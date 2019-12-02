@@ -1,0 +1,117 @@
+.footer-v1.site-footer {
+	position: relative;
+	background-color: #2c2c2c;
+	text-align: center;
+	padding-top: 5.5em;
+
+	.footer-logo {
+		width: 200px;
+		margin: 0 auto 52px auto;
+
+		.site-description {color: #888;}
+
+		.site-title {margin-bottom: 0;}
+	}
+
+	.footer-social-icons {
+		margin-bottom: 3.375em;
+
+		.social-icons {
+			margin: 0;
+
+			> li {
+				display: inline-block;
+
+				& + li {
+					margin-left: 1.563em;
+				}
+			}
+
+			a {
+				color: #969696;
+				font-size: 1.125em;
+				border: 1px solid #969696;
+				border-radius: 50%;
+				display: block;
+				width: 52px; height: 52px;
+				position: relative;
+
+				&::before {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+
+				&:hover, &:focus {
+					text-decoration: none;
+					color: darken( #969696, 20% );
+					border-color: darken( #969696, 20% );
+				}
+			}
+		}
+
+		.social-icon-text {display: none;}
+	}
+
+	.site-address {
+		margin-bottom: 8px;
+
+		.address {
+			list-style: none;
+			margin: 0;
+
+			li {
+				display: inline-block;
+				vertical-align: middle;
+				font-size: .875em;
+				color: #dddddd;
+			}
+
+			li + li::before {
+				content: " ";
+				width: 1px;
+				height: 14px;
+				display: inline-block;
+				vertical-align: middle;
+				margin:0 25px 0 22px;
+			}
+		}
+	}
+
+	.site-info {
+		margin-bottom: 4.34em;
+	}
+
+	.footer-action-btn {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX( -50% );
+		color: #fff;
+		font-weight: 900;
+		font-size: 0.875em;
+		line-height: 1.929em;
+		background-color: #f0002f;
+		display: inline-block;
+		padding: 1.214em 3.746em;
+		border-top-left-radius: 18px;
+		border-top-right-radius: 18px;
+
+		i {
+			font-size: 1.8em;
+			vertical-align: middle;
+			display: inline-block;
+			margin-right: 0.338em;
+		}
+	}
+}
+
+.footer-v1-static-content {
+	@include clearfix;
+
+	.kc_wrap_instagram ul li {
+		margin: 0;
+		padding: 0;
+	}
+}

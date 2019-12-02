@@ -1,0 +1,225 @@
+<div class="h2 text-center">Konfirmasi</div>
+<table class="table table-responsive table-hover table-condensed table-sm">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nama</th> 
+            <th>Harga</th>
+            <th>Qty</th>
+            <th >Sub Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {cart_content}
+        <tr>
+            <td>{menu_kode}</td>
+            <td>{menu_nama}</td>
+            <td>Rp. <span class="price" data-value="{price}">0</span></td>
+            <td>{qty}</td>
+            <td>Rp. <span class="subtotal" data-value="{subtotal}">0</span></td>
+        </tr>
+        <tr class="hidden">
+            <td colspan="20">
+                <input type="hidden-" class="row_line"
+                    data-menu_id="{menu_id}"
+                    data-order_detail_harga="{price}"
+                    data-order_detail_qty="{qty}"
+                    data-order_detail_subtotal="{subtotal}" 
+                    data-waktu="{waktu}" 
+                    data-rowid="{rowid}" 
+                >
+            </td>
+        </tr>
+        {/cart_content}
+        <tr>
+            <th colspan="10"></th>
+        </tr>
+    </tbody>
+</table>
+<form id="from_bayar">
+    <table class=" table-borderless" >
+        </tbody>
+            <tr>
+                <th class="text-right" colspan="4" width="70%">TOTAL :</th>
+                <td class="h3 text-right-">Rp. <span class="cart_total" data-value="{cart_total}">0</span></td>
+            </tr>
+            <tr>
+                <th class="text-right" colspan="4">BAYAR :</th>
+                <td>
+                    <div class="input-group">
+                        <div class="input-group-addon">Rp.</div>
+                        <input required="required" type="number" class="form-control" id="order_bayar" placeholder="Amount" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="text-right" colspan="4">KEMBALIAN :</th>
+                <td class="h3 text-right-">Rp.
+                    <span id="order_kembali">0</span>
+                </td>
+            </tr>
+            <tr>
+                <th class="text-right" colspan="4">MEJA :</th>
+                <td>  
+                    <select class="form-control" id="meja_id" required="required"  >
+                        <option value="">-- Pilih Meja --</option>
+                        {resto_meja}
+                        <option>{meja_id}</option>
+                        {/resto_meja}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th class="text-right" colspan="4"> </th>
+                <td>  
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="i_agree" required="required" >
+                            I Agree with terms and conditions.
+                        </label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="text-right" colspan="4"> </th>
+                <td>  
+                    <button type="submit" id="btn_submit" disabled class="btn btn-success btn-block btn-lg">BAYAR</button>
+                </td>
+            </tr>
+            <tr class="hidden">
+                <td colspan="20">
+                    <input type="hidden-" class="row_total"
+                        data-meja_id=""
+                        data-user_username=""
+                        data-order_nama=""
+                        data-order_tanggal=""
+                        data-order_qty=""
+                        data-order_waktu=""
+                        data-order_total="{cart_total}"
+                        data-order_bayar=""
+                        data-order_kembali=""
+                        data-order_status=""
+                    >
+                </td>
+            </tr>
+        <tbody class="hidden">
+            <tr>
+                <th class="text-right" colspan="4">PPN 10% :</th>
+                <td>Rp. <span class="ppn" >0</span></td>
+            </tr>
+            <tr>
+                <th class="text-right" colspan="4">GRAND TOTAL :</th>
+                <td>Rp. <span class="grand_total" >0</span></td>
+            </tr>
+        </tbody>
+
+    </table>
+</form>
+
+<style type="text/css">
+    .table-borderless th{border:0!important; padding: 8px;vertical-align: middle;}
+    .table-borderless td{border:0!important; padding: 8px;vertical-align: middle;}
+</style>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.price, .subtotal, .cart_total').each(function(index, el) {
+            var price = $(this).data('value'); 
+            $(this).html(parseInt(price).toLocaleString('id-ID'));
+        });
+        var total = $('.cart_total').data('value');
+        var ppn = parseInt(total)*10/100;
+        var grand_total = parseInt(ppn) + parseInt(total);
+        $('.ppn').html(parseInt(ppn).toLocaleString('id-ID'));
+        $('.grand_total').html(parseInt(grand_total).toLocaleString('id-ID')); 
+        //--------------------//
+        var order_waktu = 0;
+        $('.row_line').each(function(index, el) {
+            order_waktu += parseInt($(this).data('waktu'));
+        });
+        $('.row_total').attr('data-order_waktu', order_waktu)
+        //--------------------//
+        $('#order_bayar').on('change keyup', function(event) {
+            event.preventDefault();
+            var order_bayar = $(this).val();
+            if (parseInt(order_bayar) >= parseInt(total)) {
+                var order_kembali = parseInt(order_bayar) - parseInt(total);
+                $('#order_kembali').html(parseInt(order_kembali).toLocaleString('id-ID'));
+                $('.row_total').attr('data-order_bayar', order_bayar);
+                $('.row_total').attr('data-order_kembali', order_kembali);
+            }else{
+                $('.row_total').attr('data-order_kembali', 0);
+                $('.row_total').attr('data-order_bayar', 0);
+                $('#order_kembali').html(0);
+            }
+        });
+        //--------------------//
+        $('#meja_id').on('change', function(event) {
+            event.preventDefault(); 
+            var meja_id = $(this).val();
+            $('.row_total').attr('data-meja_id', meja_id);
+
+        });
+        //--------------------//
+        $('#i_agree').on('change', function(event) {
+            event.preventDefault();
+            if ($(this).is(':checked')) {
+                $('#btn_submit').removeAttr('disabled');
+            }else{
+                $('#btn_submit').attr('disabled', true);
+
+            }
+        });
+        //--------------------//
+        $('#from_bayar').on('submit', function(event) {
+            event.preventDefault();
+            var resto_order = [];
+            var row_total = $('.row_total');
+
+            var data_total = {};
+            data_total['meja_id']       = row_total.data('meja_id');
+            data_total['user_username'] = row_total.data('user_username');
+            data_total['order_nama']    = row_total.data('order_nama');
+            data_total['order_tanggal'] = new Date().toISOString().split('T')[0];
+            data_total['order_qty']     = row_total.data('order_qty');
+            data_total['order_waktu']   = row_total.data('order_waktu');
+            data_total['order_total']   = row_total.data('order_total');
+            data_total['order_bayar']   = row_total.data('order_bayar');
+            data_total['order_kembali'] = row_total.data('order_kembali');
+            data_total['order_status']  = 2; 
+            data_total['order_update']  = new Date().toISOString().split('T')[0] + ' ' + new Date().toLocaleTimeString( 'en-US', { hour12: false }); 
+
+            resto_order.push(data_total);
+            var resto_order = JSON.stringify(data_total);
+            
+            var resto_order_detail = [];
+            $('.row_line').each(function(index, el) { 
+                var data = {}; 
+                data['menu_id']               = $(this).attr('data-menu_id'); 
+                data['order_detail_harga']    = $(this).attr('data-order_detail_harga'); 
+                data['order_detail_qty']      = $(this).attr('data-order_detail_qty'); 
+                data['order_detail_subtotal'] = $(this).attr('data-order_detail_subtotal'); 
+                resto_order_detail.push(data);
+            });
+            var resto_order_detail = JSON.stringify(resto_order_detail);
+
+            $.ajax({
+                url: '{base}/checkout/dobooking',
+                type: 'POST',
+                data: {
+                    resto_order_detail: resto_order_detail,
+                    resto_order : resto_order
+                },
+            })
+            .done(function(res) {
+                location.href = '{base}/checkout/detail/'+res.order_id;
+            })
+            .fail(function(error) {
+                console.log(error.responseText);
+            });
+            
+
+        });
+        //--------------------//
+
+    }); 
+</script>

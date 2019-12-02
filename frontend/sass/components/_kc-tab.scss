@@ -1,0 +1,196 @@
+.kc_tabs,
+.kc-section-tab.kc_tabs {
+    .kc_tabs_nav {
+        border-bottom: 1px solid #e9e9e9;
+        margin: 0 0 5em;
+        text-align: center;
+        line-height: 1;
+
+        li {
+            display: inline-block;
+            border-right: none;
+
+            a {
+                font-size: 1.625em;
+            	font-weight: normal;
+            	color: #9b959b;
+            	text-align: center;
+                padding: 10px 26px;
+            	padding-bottom: 0.692em;
+            	position: relative;
+
+                &:hover,&:focus {background-color: transparent;}
+            }
+
+            &.ui-tabs-active {
+                a {
+                    font-weight: bold;
+                    color: #2d2b2d;
+                }
+
+                a::after {
+                    content: "";
+                    width: 80px;
+                    height: 3px;
+                    left: 50%;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    bottom: -2px;
+                }
+            }
+        }
+    }
+
+    .ui-tabs {
+        padding: 0;
+    }
+
+    >.kc_wrapper>.kc_tabs_nav {
+        background-color: transparent;
+        margin: 0 0 5em;
+    }
+
+    .ui-tabs .ui-tabs-nav li.ui-tabs-active {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .kc_wrapper>ul.ui-tabs-nav>li {
+        overflow: visible;
+    }
+
+    .kc_tabs_nav > li:hover,
+    .kc_tabs_nav > li > a:hover,
+    .kc_tabs_nav > .ui-tabs-active > a {
+        background-color: transparent;
+    }
+
+    .kc_tabs_nav > .ui-tabs-active,
+    .kc_tabs_nav > .ui-tabs-active:hover,
+    .kc_tabs_nav > .ui-tabs-active > a,
+    .kc_tabs_nav > .ui-tabs-active > a:hover {
+        display: inline-block;
+    }
+
+    .kc_tabs_nav > li > a {
+        line-height: 1.077em;
+    }
+
+    .ui-tabs .ui-tabs-nav li {
+        float: none;
+        margin: 0;
+    }
+
+    .ui-tabs .ui-tabs-nav {
+        padding: 0;
+    }
+
+    .kc_tabs_nav ~ .kc_tab .kc_tab_content,
+    .ui-tabs .ui-tabs-panel {
+        padding: 0;
+    }
+
+    .kc_tabs_nav ~ .kc_tab.ui-tabs-body-active {
+        background-color: transparent;
+    }
+}
+
+.page-template-template-homepage-v5 {
+    .kc_tabs > .kc_tabs_nav {margin: 0 0 5.2em;}
+}
+
+.page-template-template-homepage-v1 {
+
+    .kc_tabs  {
+        .kc_tabs_nav {
+            padding-top: 48px
+        }
+    }
+}
+
+.page-template-template-homepage-v2 {
+
+    .kc_tabs  {
+        .kc_tabs_nav {
+            padding-top: 98px
+        }
+    }
+}
+
+.page-template-template-homepage-v6 {
+
+    .kc_tabs {
+        .kc_tabs_nav {
+            padding-top: 83px
+        }
+    }
+}
+
+.page-template-template-homepage-v2 .products-with-gallery-tabs,
+.products-with-gallery-tabs {
+    &.kc_tabs {
+        .kc_tabs_nav {
+            padding: 1.266em 0;
+            margin: 0;
+            font-size: 0.938em;
+
+            li + li {
+                &::before {
+                    content: " ";
+                    width: 2px;
+                    height: 40px;
+                    background-color: #df8392;
+                    opacity: .3;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                }
+            }
+
+            li {
+
+                a {
+                    font-size: 1em;
+                    color: #e0929d;
+                    padding: 10px 52px .692em;
+                    line-height: 1.750em;
+
+                    i {
+                        display: block;
+                        font-size: 2.133em;
+                    }
+
+                    &:hover {
+                        color: #fff;
+                        text-shadow: 0 0 .65px #fff,0 0 .65px #fff;
+                    }
+                }
+
+                &.ui-tabs-active a {
+                    color: #fff;
+                    text-shadow: 0 0 .65px #fff,0 0 .65px #fff;
+                    font-weight: normal;
+
+                    &::after {
+                        width: 27px;
+                        height: 27px;
+                        left: 50%;
+                        transform: rotate(45deg) translate(-50%, 0%);
+                        bottom: -46%;
+                        border-radius: 6px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.kc_tabs .kc_tabs_nav ~ .section-products-with-gallery.ui-tabs-body-active {
+    background: #f6f6f6;
+    padding: 140px 0 107px 0;
+}
+
+.kc_tabs_nav ~ .kc_tab.section-products-with-gallery .kc_tab_content {
+    padding: 0;
+}

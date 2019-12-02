@@ -1,0 +1,22 @@
+#scrollUp{
+	border-radius: 3px;
+    bottom: 1.25rem;
+    color: #fff;
+    font-size: 2.25rem;
+    height: 2.625rem;
+    line-height: 100%;
+    opacity: 0.5;
+    padding: 3px;
+    right: 1.25rem;
+    text-align: center;
+    width: 2.625rem;
+
+    &:hover,&:focus,&:active{
+    	opacity: 1;
+    }
+    
+    i{
+    	display: inline-block;
+    	vertical-align: top;
+    }
+}

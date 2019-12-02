@@ -1,0 +1,92 @@
+.section-products-with-gallery {
+    padding-top: 140px;
+    background-color: #f6f6f6;
+    padding-bottom: 107px;
+
+    &.stretch-full-width .columns-5 ul.products li.product {
+        padding: 0;
+    }
+
+    ul.products {
+        margin-right: 0.938em;
+        margin-left: 0.938em;
+        margin-bottom: 0;
+
+        li.product {
+            transform: translate(0px, 0px) rotate(0deg) skew(0deg, 0deg) scale(1, 1);
+            border: none;
+            padding: 0 15px;
+            margin-bottom: 0.3em;
+
+            .yith_wapo_groups_container,.button {visibility: hidden;}
+
+            &:hover {
+                transform: translate(0px, -60px) rotate(0deg) skew(0deg, 0deg) scale(1, 1);
+                border: none;
+
+                .owl-nav {
+                    display: block;
+                }
+
+                .yith_wapo_groups_container,.button {visibility: visible;}
+            }
+
+            .hover-area,
+            &:hover .product-inner {
+                background-color: transparent;
+            }
+
+            .onsale {
+                z-index: 2;
+            }
+
+            .product-image-wrapper {
+                min-height: 300px;
+            }
+
+            .product-image-wrapper,
+            &:hover .product-image-wrapper {
+                border-bottom: none;
+                position: relative;
+            }
+
+            .product-image-wrapper,
+            .product-content-wrapper {
+                padding-right: 0px;
+                padding-left: 0px;
+            }
+
+            .ywapo_group_container_radio h3 span::before,
+            .ywapo_group_container_radio h3 span::after {
+                width: 80%;
+            }
+        }
+    }
+
+    .owl-nav {
+        display: none;
+
+        .owl-prev,.owl-next {
+            position: absolute;
+            top: 86%;
+
+            i {
+                font-size: 1.875em;
+                color: #c2c2c2;
+            }
+
+            &.disabled {
+                opacity: 0.2;
+                cursor: not-allowed;
+            }
+        }
+
+        .owl-prev {
+            left: -2.125em;
+        }
+
+        .owl-next {
+            right: -2.125em;
+        }
+    }
+}

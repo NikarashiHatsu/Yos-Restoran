@@ -1,0 +1,17 @@
+.header-v1,
+.header-v2,
+.header-v3,
+.header-v4,
+.header-v5 {
+    margin-bottom: 4em;
+
+    &.site-header .custom-logo-link,
+    &.site-header .site-logo-anchor,
+    &.site-header .site-logo-link {float: none;}
+}
+
+@import 'header-v1';
+@import 'header-v2';
+@import 'header-v3';
+@import 'header-v4';
+@import 'header-sidebar';

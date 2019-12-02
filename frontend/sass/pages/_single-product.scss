@@ -1,0 +1,318 @@
+.single-product {
+    div.product {
+
+        .product-images-wrapper,.summary {@include make-column;}
+
+        .single-product-wrapper {display: inline-block;}
+
+        .product-images-wrapper {
+            @include make-xs-column(12);
+            @include make-sm-column(6);
+            @include make-md-column(6);
+            margin-bottom: ms(6);
+            padding-left: 0;
+        }
+
+        .thumbnails {
+            @include clearfix;
+            @include make-row;
+            float: left;
+            width: 100%;
+
+            a.zoom {
+                @include make-column;
+                @include make-xs-column(12);
+                @include make-sm-column(3);
+                @include make-md-column(3);
+            }
+        }
+
+        .summary {
+            @include make-xs-column(12);
+            @include make-sm-column(6);
+            @include make-md-column(6);
+
+            .product_title {
+                font-size: 1.750em;
+                color: #2d2b2d;
+                font-weight: normal;
+            }
+
+            .product_title,
+            .food-type-icon {
+                display: inline-block;
+            }
+
+            .food-type-icon {
+                vertical-align: top;
+                line-height: 2.5;
+                font-size: .5em;
+                margin-left: 0.5em;
+            }
+
+            .woocommerce-product-rating {display: none;}
+
+            div[itemprop="description"] {
+                font-style: italic;
+                color: #71706c;
+            }
+        }
+
+        .product-images-wrapper .onsale {
+            position: absolute;
+        }
+
+        .woocommerce-tabs {
+            clear: both;
+        }
+
+        .group-name {display: none;}
+
+        form.cart {
+
+            .yith_wapo_groups_container {
+                @include make-row;
+                position: relative;
+            }
+
+            .form-row-wide {
+                clear: none;
+            }
+
+            .yith_wapo_group_total {
+                padding-left: 15px;
+            }
+
+            .yith_wapo_groups_container_wrap {
+                @include clearfix();
+                margin-bottom: 20px;
+            }
+
+            .yith_wapo_groups_container_wrap,
+            .yith_wapo_group_total {
+                margin-bottom: 20px;
+            }
+
+            .qty-btn {
+                display: inline-block;
+
+                > label {
+                    display: block;
+                    color: #2b2929;
+                    font-size: .938em;
+                    font-weight: 700;
+                    padding-bottom: 0.867em;
+                }
+            }
+
+            .ywapo_group_container {
+                @include make-column;
+                @include make-xs-column(12);
+                @include make-sm-column(6);
+                @include make-md-column(6);
+
+                h3 {
+                    color: #2b2929;
+                    font-size: 0.938em;
+                    font-weight: bold;
+                }
+
+                .required {display: none;}
+
+                .ywapo_input_container_checkbox {
+                    margin-bottom: 0;
+                    .ywapo_option_label {
+                        font-weight: normal;
+                        color: #2b2929;
+                        font-size: 0.875em;
+                    }
+                }
+
+                .ywapo_input_container_checkbox + .ywapo_input_container_checkbox  {
+                    margin-top: 0.250em;
+                }
+            }
+
+            .ywapo_group_container_text {
+                width: 100%;
+                padding-right: 0;
+            }
+
+            .ywapo_input_container_checkbox {
+                position: relative;
+                display: table;
+
+                input {
+                    opacity: 0;
+                    width: 100%;
+                    position: absolute;
+                    height: 30px;
+                    margin: 0;
+                    z-index: 1;
+                }
+
+                label {
+                    padding-left: 1.375em;
+                    line-height: 0.8;
+                }
+
+                label::before {
+                    content: "\f096";
+                    font-family: $fa;
+                    position: absolute;
+                    left: 0;
+                    font-size: 1.125em;
+                    color: #d2d2d2;
+                    font-weight: 100;
+                }
+
+                input:checked + label::before {
+                    content: "\f14a";
+                    color: #ffcd00;
+                    background-color: #000;
+                    width: 0.778em;
+                    border-radius: 100%;
+                }
+
+                .amount {
+                    color: #a0a0a0;
+                    font-size: 0.875em;
+
+                    &::before {
+                        content: "(";
+                        padding-left: 2px;
+                    }
+
+                    &::after {
+                        content: ")";
+                    }
+                }
+            }
+
+            .ywapo_input_container_radio {
+                display: inline-block;
+                margin: 0 1.2em 1em 0;
+
+                &:nth-child(2) {
+                    margin-left: 0;
+                }
+            }
+
+            .ywapo_group_container_radio{
+                padding: 0;
+                margin-bottom: 0;
+
+                h3 {
+                    margin-bottom: 2em;
+                }
+            }
+        }
+    }
+}
+
+.single-product.style-1 {
+    div.product {
+        div[itemprop=description] {
+            margin-bottom: 1.5em;
+        }
+
+        .sharedaddy {
+            padding-bottom: 1.375em;
+            margin-bottom: 0.625em;
+            border-bottom: 1px solid #e9e9e9;
+        }
+
+        .thumbnails {
+            @include clearfix;
+            margin: 0;
+            float: left;
+            width: 100%;
+
+            a.zoom {
+                @include make-column;
+                @include make-xs-column(4);
+                @include make-sm-column(3);
+                @include make-md-column(3);
+            }
+        }
+
+        form.cart {
+            .yith_wapo_groups_price_container {
+                clear: both;
+                margin-bottom: 1.250em;
+            }
+
+            .qty-btn {float: left;}
+
+            .button {
+                margin-top: 2.4em;
+                float: none;
+                margin-left: 2em;
+            }
+
+            .ywapo_group_container {
+                @include make-column;
+                @include make-xs-column(12);
+                @include make-sm-column(12);
+                @include make-md-column(6);
+            }
+
+            .ywapo_group_container_radio {
+                padding: 0;
+            }
+        }
+    }
+}
+
+// Full width single product
+.pizzaro-full-width-content.single-product {
+    .related,
+    .upsells {
+        ul.products {
+            @include make-column;
+            width: 100%;
+
+            li.product {
+                @include make-xs-column(12);
+                @include make-sm-column(3);
+                @include make-md-column(3);
+
+                .ywapo_input_container_radio {
+                    margin: 0 .2em 2em;
+                }
+
+                .ywapo_input_container_radio .ywapo_label_price .amount {
+                    font-size: 1.063em;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:468px) {
+    .single-product.style-1 div.product {
+        form.cart {
+            .button {
+                float: left;
+            }
+        }
+    }
+
+    .single-product.style-3 div.product {
+        .product-form-wrapper {
+            form.cart {
+                text-align: center;
+
+                .qty-btn,
+                .yith_wapo_group_total {
+                    text-align: center;
+                    padding-right: 0;
+                }
+
+                .yith_wapo_groups_container {
+                    margin: 0 0 30px;
+                }
+            }
+        }
+    }
+}
