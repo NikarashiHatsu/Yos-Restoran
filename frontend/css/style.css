@@ -14297,7 +14297,7 @@ ul.products li.product .ywapo_input_container_radio.ywapo_input_container:nth-ch
 }
 .header-v1 .site-header-cart-v2 .cart-content>a {
     padding: .66em .9em;
-    background-color: #ea0039;
+    background-color:   #333;
     border-radius: 50px;
     color: #fff;
     line-height: 1;

@@ -13,7 +13,7 @@
 
                 <div id="post-9" class="post-9 page type-page status-publish hentry">
                     <div class="entry-content">
-                        <?=$review_content;?>
+                        <?= $review_content; ?>
                     </div>
                 </div>
 

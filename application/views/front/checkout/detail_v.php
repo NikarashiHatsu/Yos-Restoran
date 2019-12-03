@@ -63,7 +63,7 @@
                                         <td><?=$Order->order_nama;?></td>
                                     </tr>
                                     <tr>
-                                        <th>No. Meja :</th>
+                                        <th>No. Antrian :</th>
                                         <td><?=$Order->meja_nama;?></td>
                                     </tr>
                                 </tbody>

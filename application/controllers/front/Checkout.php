@@ -274,7 +274,7 @@ class Checkout extends MY_Controller
         $pdf->SetFont('Helvetica', '', 8);
         $pdf->Cell(142, 10, '   ' . $Order->order_nama, 1, 1);
         $pdf->SetFont('Helvetica', 'B', 8);
-        $pdf->Cell(50, 10, ' Nomor Meja:', 1, 0);
+        $pdf->Cell(50, 10, ' Nomor Antrian:', 1, 0);
         $pdf->SetFont('Helvetica', '', 8);
         $pdf->Cell(142, 10, '   ' . $Order->meja_nama, 1, 1);
 

@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="section-products">
-                    <h2 class="section-title">Menu Kami</h2>
+                    <h2 class="section-title">Barang Kami</h2>
                     <div class="columns-4">
                         <ul class="products">
                             <?php 
@@ -49,7 +49,7 @@
                                                 </div>
                                             </a>
                                             <div class="hover-area">
-                                                <a data-id="<?=$r->menu_id;?>" data-qty="1" title="Tambah ke Keranjang" type="button" class="addToCart button product_type_simple add_to_cart_button">Order</a>
+                                                <a data-id="<?=$r->menu_id;?>" data-qty="1" title="Tambah ke Keranjang" type="button" class="addToCart button product_type_simple add_to_cart_button">Add to Cart</a>
                                             </div>
                                         </div>
                                     </div>
