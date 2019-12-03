@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 30 Apr 2019 pada 06.23
--- Versi server: 10.1.36-MariaDB
--- Versi PHP: 7.2.10
+-- Host: localhost
+-- Waktu pembuatan: 03 Des 2019 pada 03.10
+-- Versi server: 10.4.6-MariaDB
+-- Versi PHP: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -90,10 +90,8 @@ CREATE TABLE `resto_kategori` (
 --
 
 INSERT INTO `resto_kategori` (`kategori_id`, `kategori_nama`, `kategori_seo`, `kategori_icon`, `kategori_update`) VALUES
-(1, 'DESSERT', 'dessert', 'po po-salads', '2019-03-10 21:46:29'),
-(2, 'MAIN COURSE', 'main-course', 'po po-burger', '2019-03-10 21:50:26'),
-(3, 'SNACK', 'snack', 'po po-fries', '2019-03-10 21:47:02'),
-(4, 'DRINK', 'drink', 'po po-drinks', '2019-03-10 21:46:45');
+(1, 'MECHANICAL', 'mechanical', '', '2019-03-10 21:46:29'),
+(2, 'MEMBRANE', 'membrane', '', '2019-03-10 21:50:26');
 
 -- --------------------------------------------------------
 
@@ -136,10 +134,10 @@ CREATE TABLE `resto_menu` (
   `menu_nama` varchar(50) NOT NULL,
   `menu_seo` text NOT NULL,
   `menu_deskripsi` text NOT NULL,
-  `menu_harga` int(10) NOT NULL DEFAULT '0' COMMENT 'Harga',
-  `menu_waktu` int(2) NOT NULL DEFAULT '0' COMMENT 'Waktu Masak',
+  `menu_harga` int(10) NOT NULL DEFAULT 0 COMMENT 'Harga',
+  `menu_waktu` int(2) NOT NULL DEFAULT 0 COMMENT 'Waktu Masak',
   `menu_foto` varchar(100) DEFAULT NULL COMMENT 'Foto Masakan',
-  `menu_jual` int(10) NOT NULL DEFAULT '0',
+  `menu_jual` int(10) NOT NULL DEFAULT 0,
   `menu_update` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -148,22 +146,14 @@ CREATE TABLE `resto_menu` (
 --
 
 INSERT INTO `resto_menu` (`menu_id`, `kategori_id`, `menu_kode`, `menu_nama`, `menu_seo`, `menu_deskripsi`, `menu_harga`, `menu_waktu`, `menu_foto`, `menu_jual`, `menu_update`) VALUES
-(1, 1, '00001', 'PANCAKE COKELAT', 'pancake-cokelat', 'Roti Cokelat dengan Topping Cokelat Kental diatasnya', 15000, 6, 'Menu_makanan_pancake-cokelat_1552196777.jpg', 4, '2019-03-10 12:58:33'),
-(2, 1, '00002', 'PIE COKELAT', 'pie-cokelat', 'pie cokelat nikmat dan manis', 10000, 8, 'Menu_makanan_pie-cokelat_1552197559.jpg', 2, '2019-03-10 12:59:19'),
-(3, 1, '00003', 'STRAWBERRY CAKE', 'strawberry-cake', 'cake dengan taburan dan saus strawberry', 30000, 10, 'Menu_makanan_strawberry-cake_1552200399.jpg', 3, '2019-03-10 13:46:39'),
-(4, 1, '00004', 'STRAWBERRY  SOFT', 'strawberry--soft', 'strawbbery', 25000, 10, 'Menu_makanan_strawberry--soft_1552200644.jpg', 0, '2019-03-10 13:50:44'),
-(5, 2, '00005', 'NASI GORENG SEAFOOD', 'nasi-goreng-seafood', 'nasi goreng dengan campuran seafood, udang dan sayuran', 15000, 10, 'Menu_makanan_nasi-goreng-seafood_1552200829.jpg', 3, '2019-03-10 13:53:49'),
-(6, 2, '00006', 'MASI GORENG TERI GURIH', 'masi-goreng-teri-gurih', 'nasi goreng dengan tambahan teri gurih dan rempah yang enak', 17000, 10, 'Menu_makanan_masi-goreng-teri-gurih_1552200907.jpg', 0, '2019-03-10 13:55:07'),
-(7, 2, '00007', 'STEAK PANGGANG', 'steak-panggang', 'daging sapi pilihan dimasak dengan bumbu rempah BBQ', 50000, 15, 'Menu_makanan_steak-panggang_1552200981.jpg', 1, '2019-03-10 13:56:21'),
-(8, 2, '00008', 'MIE GORENG SEAFOOD', 'mie-goreng-seafood', 'Mie goreng dengan tambahan ikan dan udang', 13000, 5, 'Menu_makanan_mie-goreng-seafood_1552201071.jpg', 1, '2019-03-10 13:57:51'),
-(9, 4, '00009', 'JUS ALPUKAT', 'jus-alpukat', 'jus alpukat dari buah alpukat pilihan yang segar', 7000, 2, 'Menu_makanan_jus-alpukat_1552201145.jpg', 2, '2019-03-10 13:59:05'),
-(10, 4, '00010', 'JUS STRAWBERRY', 'jus-strawberry', 'Jus strawberry segar', 7000, 2, 'Menu_makanan_jus-strawberry_1552202038.jpg', 0, '2019-03-10 14:21:33'),
-(11, 4, '00011', 'ES TEH LEMON', 'es-teh-lemon', 'Es Teh Lemon', 5000, 2, 'Menu_makanan_es-teh-lemon_1552202101.jpg', 0, '2019-03-10 14:15:01'),
-(12, 4, '00012', 'ES SUSU COKELAT', 'es-susu-cokelat', 'es susu cokelat segar', 10000, 3, 'Menu_makanan_es-susu-cokelat_1552202151.jpg', 1, '2019-03-10 14:15:51'),
-(13, 4, '00013', 'ES KOPI CAPPUCINO', 'es-kopi-cappucino', 'Es kopi cappucino', 10000, 4, 'Menu_makanan_es-kopi-cappucino_1552202327.jpg', 1, '2019-03-10 14:18:47'),
-(14, 3, '00014', 'FRIENCH FRIES', 'friench-fries', 'kentang goreng dengan potongan jumbo', 5000, 4, 'Menu_makanan_friench-fries_1552202378.jpg', 1, '2019-03-10 14:19:38'),
-(15, 3, '00015', 'PISANG GORENG COKELAT KEJU', 'pisang-goreng-cokelat-keju', 'pisang goreng dengan lapisan cokelat dan taburan keju', 15000, 5, 'Menu_makanan_pisang-goreng-cokelat-keju_1552202437.jpg', 0, '2019-03-10 14:20:37'),
-(16, 3, '00016', 'TEMPE GORENG / MENDOAN', 'tempe-goreng--mendoan', 'tempe goreng dengan tepung gurih', 5000, 5, 'Menu_makanan_tempe-goreng--mendoan_1552202483.jpg', 0, '2019-03-10 14:21:23');
+(1, 1, '00001', 'KEYBOARD MECHANICAL 1', 'keyboard-mechanical-1', 'Keyboard Mechanical', 1000000, 1, 'Menu_makanan_mechanical_1.jpeg', 10, '2019-03-10 12:58:33'),
+(2, 1, '00002', 'KEYBOARD MECHANICAL 2', 'keyboard-mechanical-2', 'Keyboard Mechanical NYK', 1000000, 1, 'Menu_makanan_mechanical_2.jpeg', 10, '2019-03-10 12:59:19'),
+(3, 1, '00003', 'KEYBOARD MECHANICAL 3', 'keyboard-mechanical-3', 'Keyboard Mechanical Sades Blademail', 1000000, 1, 'Menu_makanan_mechanical_3.jpeg', 10, '2019-03-10 13:46:39'),
+(4, 1, '00004', 'KEYBOARD MECHANICAL 4', 'keyboard-mechanical-4', 'Keyboard Mechanical', 1000000, 1, 'Menu_makanan_mechanical_4.jpeg', 10, '2019-03-10 13:50:44'),
+(5, 1, '00005', 'KEYBOARD MECHANICAL 5', 'keyboard-mechanical-5', 'Keyboard Mechanical', 1000000, 1, 'Menu_makanan_mechanical_5.jpeg', 10, '2019-03-10 13:53:49'),
+(6, 2, '00006', 'KEYBOARD MEMBRANE 1', 'keyboard-membrane-1', 'Keyboard Membrane Steelseries', 500000, 1, 'Menu_makanan_membrane_1.jpeg', 10, '2019-03-10 13:55:07'),
+(7, 2, '00007', 'KEYBOARD MEMBRANE 2', 'keyboard-membrane-2', 'Keyboard Membrane', 500000, 1, 'Menu_makanan_membrane_2.jpeg', 10, '2019-03-10 13:56:21'),
+(8, 2, '00008', 'KEYBOARD MEMBRANE 3', 'keyboard-membrane-3', 'Keyboard Membrane Votre', 50000, 1, 'Menu_makanan_membrane_3.jpeg', 10, '2019-03-10 13:57:51');
 
 -- --------------------------------------------------------
 
@@ -174,8 +164,8 @@ INSERT INTO `resto_menu` (`menu_id`, `kategori_id`, `menu_kode`, `menu_nama`, `m
 CREATE TABLE `resto_meta` (
   `meta_id` int(2) NOT NULL,
   `meta_name` varchar(50) NOT NULL COMMENT 'Nama Website',
-  `meta_desc` text,
-  `meta_keyword` text,
+  `meta_desc` text DEFAULT NULL,
+  `meta_keyword` text DEFAULT NULL,
   `meta_author` varchar(100) DEFAULT NULL,
   `meta_developer` varchar(50) DEFAULT NULL,
   `meta_robots` varchar(50) DEFAULT NULL,
@@ -201,15 +191,15 @@ CREATE TABLE `resto_order` (
   `meja_id` int(2) NOT NULL,
   `order_nama` varchar(50) NOT NULL,
   `order_tanggal` date DEFAULT NULL,
-  `order_catatan` text,
+  `order_catatan` text DEFAULT NULL,
   `order_qty` int(5) NOT NULL,
-  `order_waktu` int(10) NOT NULL DEFAULT '0',
-  `order_diskon` int(10) NOT NULL DEFAULT '0',
-  `order_total` int(10) NOT NULL DEFAULT '0',
-  `order_bayar` int(10) NOT NULL DEFAULT '0',
-  `order_kembali` int(10) DEFAULT '0',
+  `order_waktu` int(10) NOT NULL DEFAULT 0,
+  `order_diskon` int(10) NOT NULL DEFAULT 0,
+  `order_total` int(10) NOT NULL DEFAULT 0,
+  `order_bayar` int(10) NOT NULL DEFAULT 0,
+  `order_kembali` int(10) DEFAULT 0,
   `order_tgl_bayar` date DEFAULT NULL,
-  `order_status` int(1) NOT NULL DEFAULT '1' COMMENT '1=Blm Bayar,2=Bayar',
+  `order_status` int(1) NOT NULL DEFAULT 1 COMMENT '1=Blm Bayar,2=Bayar',
   `user_username` varchar(30) DEFAULT NULL COMMENT 'User Bayar',
   `order_update` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -224,7 +214,11 @@ INSERT INTO `resto_order` (`order_id`, `meja_id`, `order_nama`, `order_tanggal`,
 (4, 2, 'HERA OKTAPIA', '2019-03-22', '', 5, 18, 5000, 65000, 60000, 0, '2019-03-23', 2, 'admin', '2019-03-23 14:39:16'),
 (5, 3, 'PEBRIYANTI', '2019-03-23', '', 6, 33, 0, 95000, 100000, 5000, '2019-03-23', 2, 'admin', '2019-03-23 14:18:45'),
 (6, 1, 'YOSEP ALFATAH', '2019-04-29', 'Saya pesan', 2, 18, 0, 40000, 0, 0, NULL, 2, NULL, '2019-04-29 23:00:29'),
-(7, 4, 'AGUS', '2019-04-29', 'beli murah', 3, 16, 0, 30000, 0, 0, NULL, 2, NULL, '2019-04-29 23:00:19');
+(7, 4, 'AGUS', '2019-04-29', 'beli murah', 3, 16, 0, 30000, 0, 0, NULL, 2, NULL, '2019-04-29 23:00:19'),
+(8, 1, 'AGHITS NIDALLAH', '2019-12-02', 'Gaada orangnya, ini order fiktif', 1, 4, 0, 10000, 0, 0, NULL, 1, NULL, '2019-12-02 22:08:33'),
+(9, 10, 'AGHITS NIDALLAH', '2019-12-03', '', 2, 12, 0, 35000, 0, 0, NULL, 1, NULL, '2019-12-03 00:19:25'),
+(10, 1, 'TEST', '2019-12-03', 'Test', 1, 1, 0, 1000000, 0, 0, NULL, 1, NULL, '2019-12-03 08:21:45'),
+(11, 1, 'TEST', '2019-12-03', 'Test', 1, 1, 0, 1000000, 0, 0, NULL, 1, NULL, '2019-12-03 08:38:24');
 
 -- --------------------------------------------------------
 
@@ -236,11 +230,11 @@ CREATE TABLE `resto_order_detail` (
   `order_detail_id` int(10) NOT NULL,
   `order_id` int(10) NOT NULL,
   `menu_id` int(10) NOT NULL,
-  `order_detail_harga` int(10) NOT NULL DEFAULT '0',
-  `order_detail_waktu` int(5) NOT NULL DEFAULT '0',
-  `order_detail_qty` int(5) NOT NULL DEFAULT '0',
-  `order_detail_subtotal` int(10) NOT NULL DEFAULT '0',
-  `order_detail_status` int(1) NOT NULL DEFAULT '1' COMMENT '1=Baru, 2=Selesai',
+  `order_detail_harga` int(10) NOT NULL DEFAULT 0,
+  `order_detail_waktu` int(5) NOT NULL DEFAULT 0,
+  `order_detail_qty` int(5) NOT NULL DEFAULT 0,
+  `order_detail_subtotal` int(10) NOT NULL DEFAULT 0,
+  `order_detail_status` int(1) NOT NULL DEFAULT 1 COMMENT '1=Baru, 2=Selesai',
   `order_detail_update` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -251,24 +245,18 @@ CREATE TABLE `resto_order_detail` (
 INSERT INTO `resto_order_detail` (`order_detail_id`, `order_id`, `menu_id`, `order_detail_harga`, `order_detail_waktu`, `order_detail_qty`, `order_detail_subtotal`, `order_detail_status`, `order_detail_update`) VALUES
 (4, 2, 6, 17000, 10, 1, 17000, 1, '2019-03-21 21:45:06'),
 (5, 2, 8, 13000, 5, 2, 26000, 1, '2019-03-20 09:22:01'),
-(6, 2, 10, 7000, 2, 2, 14000, 1, '2019-03-20 09:22:01'),
-(7, 2, 11, 5000, 2, 5, 25000, 1, '2019-03-20 09:22:01'),
 (8, 3, 1, 15000, 6, 4, 60000, 1, '2019-03-21 21:44:46'),
 (10, 3, 3, 30000, 10, 3, 90000, 1, '2019-03-20 10:12:13'),
-(11, 3, 9, 7000, 2, 1, 7000, 1, '2019-03-21 21:39:58'),
 (12, 4, 2, 10000, 8, 2, 20000, 1, '2019-03-22 20:47:51'),
 (13, 4, 5, 15000, 10, 3, 45000, 1, '2019-03-22 20:47:51'),
-(14, 5, 12, 10000, 3, 1, 10000, 2, '2019-03-23 14:42:56'),
-(15, 5, 9, 7000, 2, 1, 7000, 2, '2019-03-23 14:03:20'),
-(16, 5, 13, 10000, 4, 1, 10000, 2, '2019-03-23 14:03:01'),
 (17, 5, 8, 13000, 5, 1, 13000, 2, '2019-03-23 14:42:56'),
 (18, 5, 7, 50000, 15, 1, 50000, 2, '2019-03-23 14:02:55'),
-(19, 5, 14, 5000, 4, 1, 5000, 2, '2019-03-23 14:42:56'),
 (20, 6, 2, 10000, 8, 1, 10000, 1, '2019-04-29 20:35:01'),
 (21, 6, 3, 30000, 10, 1, 30000, 1, '2019-04-29 20:35:01'),
-(22, 7, 11, 5000, 2, 1, 5000, 1, '2019-04-29 22:53:19'),
-(23, 7, 13, 10000, 4, 1, 10000, 1, '2019-04-29 22:53:20'),
-(24, 7, 5, 15000, 10, 1, 15000, 1, '2019-04-29 22:53:20');
+(24, 7, 5, 15000, 10, 1, 15000, 1, '2019-04-29 22:53:20'),
+(27, 9, 3, 30000, 10, 1, 30000, 1, '2019-12-03 00:19:26'),
+(28, 10, 1, 1000000, 1, 1, 1000000, 1, '2019-12-03 08:21:45'),
+(29, 11, 2, 1000000, 1, 1, 1000000, 1, '2019-12-03 08:38:24');
 
 -- --------------------------------------------------------
 
@@ -308,8 +296,8 @@ CREATE TABLE `resto_slider` (
 --
 
 INSERT INTO `resto_slider` (`slider_id`, `slider_image`, `slider_update`) VALUES
-(1, 'Slider_1552233220.jpg', '2019-03-10 22:53:40'),
-(2, 'Slider_1552233651.jpg', '2019-03-10 23:00:51');
+(1, 'Slider_1.jpeg', '2019-03-10 22:53:40'),
+(2, 'Slider_2.jpeg', '2019-03-10 23:00:51');
 
 -- --------------------------------------------------------
 
@@ -456,7 +444,7 @@ CREATE TABLE `v_order_detail` (
 --
 DROP TABLE IF EXISTS `v_akses`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_akses`  AS  (select `a`.`akses_id` AS `akses_id`,`a`.`user_username` AS `user_username`,`a`.`kategori_id` AS `kategori_id`,`a`.`akses_update` AS `akses_update`,`k`.`kategori_nama` AS `kategori_nama` from (`resto_akses` `a` join `resto_kategori` `k` on((`a`.`kategori_id` = `k`.`kategori_id`)))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_akses`  AS  (select `a`.`akses_id` AS `akses_id`,`a`.`user_username` AS `user_username`,`a`.`kategori_id` AS `kategori_id`,`a`.`akses_update` AS `akses_update`,`k`.`kategori_nama` AS `kategori_nama` from (`resto_akses` `a` join `resto_kategori` `k` on(`a`.`kategori_id` = `k`.`kategori_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -465,7 +453,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_menu`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_menu`  AS  (select `m`.`menu_id` AS `menu_id`,`m`.`kategori_id` AS `kategori_id`,`m`.`menu_kode` AS `menu_kode`,`m`.`menu_nama` AS `menu_nama`,`m`.`menu_seo` AS `menu_seo`,`m`.`menu_deskripsi` AS `menu_deskripsi`,`m`.`menu_harga` AS `menu_harga`,`m`.`menu_waktu` AS `menu_waktu`,`m`.`menu_foto` AS `menu_foto`,`m`.`menu_jual` AS `menu_jual`,`m`.`menu_update` AS `menu_update`,`k`.`kategori_nama` AS `kategori_nama`,`k`.`kategori_seo` AS `kategori_seo` from (`resto_menu` `m` join `resto_kategori` `k` on((`m`.`kategori_id` = `k`.`kategori_id`)))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_menu`  AS  (select `m`.`menu_id` AS `menu_id`,`m`.`kategori_id` AS `kategori_id`,`m`.`menu_kode` AS `menu_kode`,`m`.`menu_nama` AS `menu_nama`,`m`.`menu_seo` AS `menu_seo`,`m`.`menu_deskripsi` AS `menu_deskripsi`,`m`.`menu_harga` AS `menu_harga`,`m`.`menu_waktu` AS `menu_waktu`,`m`.`menu_foto` AS `menu_foto`,`m`.`menu_jual` AS `menu_jual`,`m`.`menu_update` AS `menu_update`,`k`.`kategori_nama` AS `kategori_nama`,`k`.`kategori_seo` AS `kategori_seo` from (`resto_menu` `m` join `resto_kategori` `k` on(`m`.`kategori_id` = `k`.`kategori_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -474,7 +462,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_order`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_order`  AS  (select `o`.`order_id` AS `order_id`,`o`.`meja_id` AS `meja_id`,`o`.`order_nama` AS `order_nama`,`o`.`order_tanggal` AS `order_tanggal`,`o`.`order_catatan` AS `order_catatan`,`o`.`order_qty` AS `order_qty`,`o`.`order_waktu` AS `order_waktu`,`o`.`order_diskon` AS `order_diskon`,`o`.`order_total` AS `order_total`,`o`.`order_bayar` AS `order_bayar`,`o`.`order_kembali` AS `order_kembali`,`o`.`order_tgl_bayar` AS `order_tgl_bayar`,`o`.`order_status` AS `order_status`,`o`.`user_username` AS `user_username`,`o`.`order_update` AS `order_update`,`m`.`meja_nama` AS `meja_nama` from (`resto_order` `o` join `resto_meja` `m` on((`o`.`meja_id` = `m`.`meja_id`)))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_order`  AS  (select `o`.`order_id` AS `order_id`,`o`.`meja_id` AS `meja_id`,`o`.`order_nama` AS `order_nama`,`o`.`order_tanggal` AS `order_tanggal`,`o`.`order_catatan` AS `order_catatan`,`o`.`order_qty` AS `order_qty`,`o`.`order_waktu` AS `order_waktu`,`o`.`order_diskon` AS `order_diskon`,`o`.`order_total` AS `order_total`,`o`.`order_bayar` AS `order_bayar`,`o`.`order_kembali` AS `order_kembali`,`o`.`order_tgl_bayar` AS `order_tgl_bayar`,`o`.`order_status` AS `order_status`,`o`.`user_username` AS `user_username`,`o`.`order_update` AS `order_update`,`m`.`meja_nama` AS `meja_nama` from (`resto_order` `o` join `resto_meja` `m` on(`o`.`meja_id` = `m`.`meja_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -483,7 +471,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `v_order_detail`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_order_detail`  AS  (select `d`.`order_detail_id` AS `order_detail_id`,`d`.`order_id` AS `order_id`,`d`.`menu_id` AS `menu_id`,`d`.`order_detail_harga` AS `order_detail_harga`,`d`.`order_detail_waktu` AS `order_detail_waktu`,`d`.`order_detail_qty` AS `order_detail_qty`,`d`.`order_detail_subtotal` AS `order_detail_subtotal`,`d`.`order_detail_status` AS `order_detail_status`,`d`.`order_detail_update` AS `order_detail_update`,`m`.`menu_kode` AS `menu_kode`,`m`.`menu_nama` AS `menu_nama`,`m`.`menu_seo` AS `menu_seo`,`m`.`kategori_id` AS `kategori_id`,`o`.`order_status` AS `order_status`,`o`.`order_tanggal` AS `order_tanggal`,`o`.`meja_id` AS `meja_id`,`j`.`meja_nama` AS `meja_nama` from (((`resto_order_detail` `d` join `resto_order` `o` on((`d`.`order_id` = `o`.`order_id`))) join `resto_menu` `m` on((`d`.`menu_id` = `m`.`menu_id`))) join `resto_meja` `j` on((`o`.`meja_id` = `j`.`meja_id`)))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_order_detail`  AS  (select `d`.`order_detail_id` AS `order_detail_id`,`d`.`order_id` AS `order_id`,`d`.`menu_id` AS `menu_id`,`d`.`order_detail_harga` AS `order_detail_harga`,`d`.`order_detail_waktu` AS `order_detail_waktu`,`d`.`order_detail_qty` AS `order_detail_qty`,`d`.`order_detail_subtotal` AS `order_detail_subtotal`,`d`.`order_detail_status` AS `order_detail_status`,`d`.`order_detail_update` AS `order_detail_update`,`m`.`menu_kode` AS `menu_kode`,`m`.`menu_nama` AS `menu_nama`,`m`.`menu_seo` AS `menu_seo`,`m`.`kategori_id` AS `kategori_id`,`o`.`order_status` AS `order_status`,`o`.`order_tanggal` AS `order_tanggal`,`o`.`meja_id` AS `meja_id`,`j`.`meja_nama` AS `meja_nama` from (((`resto_order_detail` `d` join `resto_order` `o` on(`d`.`order_id` = `o`.`order_id`)) join `resto_menu` `m` on(`d`.`menu_id` = `m`.`menu_id`)) join `resto_meja` `j` on(`o`.`meja_id` = `j`.`meja_id`))) ;
 
 --
 -- Indexes for dumped tables
@@ -610,13 +598,13 @@ ALTER TABLE `resto_meta`
 -- AUTO_INCREMENT untuk tabel `resto_order`
 --
 ALTER TABLE `resto_order`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `resto_order_detail`
 --
 ALTER TABLE `resto_order_detail`
-  MODIFY `order_detail_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `order_detail_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT untuk tabel `resto_printer`
